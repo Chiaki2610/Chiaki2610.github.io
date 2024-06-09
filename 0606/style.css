@@ -14,10 +14,17 @@ body {
 p {
   font-size: 12px;
 }
+
 .wrap1,
 .wrap3 {
   padding: 50px;
   background-color: #f5f5f5;
+}
+.wrap2 {
+  margin: auto;
+  width: 1200px;
+}
+.wrap3 {
   margin: 50px 0 0 0;
 }
 .wrap1 h1 {
@@ -49,18 +56,20 @@ p {
   margin: 10px 0 10px 0;
 }
 .wrap2 .feature .txt p {
+  width: 90%;
+  margin: 20px 0 0 0;
   font-size: 15px;
 }
 .wrap2 .feature .txt .list {
   display: flex;
   flex-wrap: wrap;
-  margin: 20px 0 20px 0;
+  margin: 20px 0;
   font-size: 15px;
 }
 .wrap2 .feature .txt ul {
-  margin: 0 50px 0 20px;
+  margin: 0 50px 0 5px;
   list-style: none;
-  line-height: 40px;
+  line-height: 35px;
 }
 .wrap2 .feature .txt ul li::before {
   content: "●　";
@@ -114,21 +123,25 @@ a {
   width: 450px;
 }
 .wrap3 .col {
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
+  width: 83%;
 }
 .wrap3 h2 {
-  margin: 20px;
-  font-size: 30px;
+  margin: 20px 0 30px 0;
+  font-size: 25px;
 }
 .wrap3 .more-function {
   width: 30%;
-  margin: 50px 10px 10px 10px;
+  margin: auto;
 }
 .wrap3 .more-function h3 {
   margin: 20px;
 }
 .wrap3 .more-function p {
   margin: auto;
-  width: 65%;
+  padding: 0 0 20px 0;
+  width: 70%;
+  font-weight: normal;
 }

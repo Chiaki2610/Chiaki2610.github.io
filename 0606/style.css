@@ -4,6 +4,8 @@
   list-style: none;
 }
 body {
+  width: 1423px;
+  margin: auto;
   text-align: center;
   color: #000080;
   font-weight: 600;
@@ -69,8 +71,8 @@ a {
   text-decoration: none;
   font-size: 15px;
 }
-.wrap2 .feature .txt p :hover::after {
-  content: "　→";
+.wrap2 .feature .txt p :hover {
+  font-size: 20px;
   transition: all 0.3s 0s ease;
   color: #000080;
 }

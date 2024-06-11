@@ -14,7 +14,6 @@ body {
 p {
   font-size: 12px;
 }
-
 .wrap1,
 .wrap3 {
   padding: 50px;
@@ -80,10 +79,17 @@ a {
   text-decoration: none;
   font-size: 15px;
 }
-.wrap2 .feature .txt p :hover {
-  font-size: 20px;
-  transition: all 0.3s 0s ease;
+.fa-arrow-right {
+  color: dodgerblue;
+}
+/* .wrap2 .feature .txt a :hover::after {
+  content: "　";
+  transition: all 1s 0s ease;
   color: #000080;
+} */
+.wrap2 .feature .txt a span:hover {
+  margin: 0 20px 0 0;
+  transition: all 0.5s 0s ease;
 }
 .blue-line1 {
   background-color: dodgerblue;

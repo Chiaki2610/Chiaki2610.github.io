@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body {
+  width: 1000px;
+  margin: auto;
+}
+h1 {
+  text-align: center;
+  margin: 40px 0;
+}
+h1 .bottom_line {
+  width: 35px;
+  height: 4px;
+  margin: 20px auto;
+  background-color: #000;
+}
+.nav_bar {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+.nav_bar a {
+  text-decoration: none;
+  width: 210px;
+  padding: 5px;
+  color: #555;
+  font-size: 20px;
+  border: 1px dotted;
+  border-bottom: 2px solid #a00;
+}
+.intr {
+  margin-top: 100px;
+}
+.intr .intr_block {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+/* 一個position */
+.intr .intr_block .grey_block {
+  z-index: 1;
+  width: 33%;
+  height: 350px;
+  background-color: #f3f3f3;
+  position: relative;
+  top: 20px;
+  left: 40%;
+}
+.intr .intr_block .txt_for_item {
+  z-index: 3;
+  width: 28%;
+  color: #fff;
+  font-weight: 100;
+  background-color: #000;
+}
+.intr .intr_block .txt_for_item h2 {
+  height: 100px;
+  background-color: #b00;
+  font-size: 40px;
+  padding: 5px;
+}
+.intr .intr_block .txt_for_item h2 span.item {
+  display: inline-block;
+  font-size: 100px;
+  transform: rotate(90deg);
+}
+.intr .intr_block .txt_for_item .item_info {
+  margin: 20px;
+}
+.intr .intr_block .txt_for_item h3 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.intr .intr_block .txt_for_item p {
+  font-size: 20px;
+}
+/* 一個position */
+.intr .intr_block .main_pic {
+  z-index: 2;
+  width: 70%;
+  position: relative;
+  left: 20%;
+  bottom: 242px;
+  background-color: pink;
+}
+.intr .intr_block .main_pic img.main {
+  width: 100%;
+  height: 500px;
+}
+/* 一個position */
+.intr .intr_block .main_pic .fa-youtube {
+  font-size: 30px;
+  color: #f00;
+  position: absolute;
+  right: -20px;
+  top: 250px;
+}
+
+.intr .intr_block .detail_intr {
+  width: 50%;
+  padding: 20px;
+  background-color: #f3f3f3;
+}
+.intr .intr_block .detail_intr h3.red_title {
+  background-color: #f3f3f3;
+  color: #c00;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+.intr .intr_block .detail_intr h3 {
+  background-color: #000;
+  color: #fff;
+  width: fit-content;
+  font-weight: normal;
+  padding: 1px 7.5px;
+}
+.intr .intr_block .detail_intr ul {
+  margin-left: 20px;
+}
+.intr .intr_block .detail_intr ul li {
+  list-style: disc;
+  margin: 5px 0 5px 5px;
+}

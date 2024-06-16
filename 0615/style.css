@@ -118,9 +118,16 @@ h1 .bottom_line {
   padding: 1px 7.5px;
 }
 .intr .intr_block .detail_intr ul {
+  list-style: none;
   margin-left: 20px;
+  font-size: 14px;
 }
 .intr .intr_block .detail_intr ul li {
-  list-style: disc;
   margin: 5px 0 5px 5px;
+  text-indent: -12px;
+}
+.intr .intr_block .detail_intr ul li::before {
+  content: "▝";
+  color: #f00;
+  font-size: 9px;
 }

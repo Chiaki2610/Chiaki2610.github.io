@@ -30,34 +30,24 @@ h1 .bottom_line {
   border: 1px dotted;
   border-bottom: 2px solid #a00;
 }
-.intr {
-  margin-top: 100px;
-}
 .intr .intr_block {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 75px;
+  margin: 150px 0;
   letter-spacing: 0.5px;
 }
-.intr .intr_block:nth-child(1) {
+/* .intr .intr_block:nth-child(1) {
   background-color: pink;
-}
+} */
 .intr .intr_block .wrap {
+  height: 500px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-content: space-between;
 }
-.intr .intr_block .wrap_even {
+/* .intr .intr_block .wrap_even {
   flex-direction: row-reverse;
-}
-.intr .intr_block .wrap .grey_block {
-  margin-top: 45px;
-  width: 400px;
-  height: 300px;
-  background-color: #f3f3f3;
-}
-.intr .intr_block .wrap_even .grey_block {
-  margin-left: 180px;
-}
+} */
 .intr .intr_block .wrap .txt_for_item {
   z-index: 3;
   width: 350px;
@@ -85,6 +75,16 @@ h1 .bottom_line {
 .intr .intr_block .wrap .txt_for_item p {
   font-size: 20px;
 }
+.intr .intr_block .grey_block {
+  float: right;
+  margin-top: 45px;
+  width: 400px;
+  height: 300px;
+  background-color: #f3f3f3;
+}
+/* .intr .intr_block .grey_block {
+  margin-left: 180px;
+} */
 /* 一個position */
 .intr .intr_block .main_pic {
   z-index: 2;
@@ -121,17 +121,14 @@ h1 .bottom_line {
 .intr .intr_block .pic_even .rect {
   left: -10px;
 }
-
 /* 一個position */
-.intr .intr_block .main_pic .detail_intr {
+.intr .intr_block .detail_intr {
   width: 665px;
   padding: 20px;
   background-color: #f3f3f3;
-  position: absolute;
-  left: -20%;
-  top: 91%;
+  /* position: absolute; */
 }
-.intr .intr_block .pic_even .detail_intr {
+.intr .intr_block .detail_intr {
   left: 61%;
 }
 .intr .intr_block .detail_intr h3.red_title {
@@ -150,7 +147,6 @@ h1 .bottom_line {
   margin-left: 10px;
   vertical-align: middle;
 }
-
 .intr .intr_block .detail_intr h3 {
   background-color: #000;
   color: #fff;

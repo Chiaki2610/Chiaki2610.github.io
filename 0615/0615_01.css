@@ -23,7 +23,7 @@ h1 .bottom_line {
 }
 .nav_bar a {
   text-decoration: none;
-  width: 17.5%;
+  width: 166px;
   padding: 5px;
   color: #555;
   font-size: 20px;
@@ -48,7 +48,7 @@ h1 .bottom_line {
 }
 .intr .intr_block .wrap .grey_block {
   margin-top: 45px;
-  width: 45%;
+  width: 427px;
   height: 300px;
   background-color: #f3f3f3;
 }
@@ -57,7 +57,7 @@ h1 .bottom_line {
 }
 .intr .intr_block .wrap .txt_for_item {
   z-index: 3;
-  width: 36%;
+  width: 342px;
   color: #fff;
   font-weight: 100;
   background-color: #000;
@@ -71,7 +71,6 @@ h1 .bottom_line {
   display: inline-block;
   font-size: 120px;
   transform: rotate(90deg);
-  align-items: flex-end;
 }
 .intr .intr_block .wrap .txt_for_item .item_info {
   margin: 20px;
@@ -88,18 +87,18 @@ h1 .bottom_line {
   z-index: 2;
   position: relative;
   left: 20%;
-  bottom: 242px;
+  bottom: 216px;
 }
 .intr .intr_block .pic_even {
   left: 0;
 }
 .intr .intr_block .main_pic img.main {
-  width: 98%;
+  width: 900px;
 }
 /* 一個position */
 .intr .intr_block .main_pic .rect {
   position: absolute;
-  right: 0px;
+  right: -10px;
   top: 58%;
   width: 20px;
   height: fit-content;

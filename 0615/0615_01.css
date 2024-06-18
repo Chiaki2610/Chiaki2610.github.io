@@ -97,15 +97,29 @@ h1 .bottom_line {
   width: 98%;
 }
 /* 一個position */
-.intr .intr_block .main_pic img.fa-youtube {
-  width: 8%;
+.intr .intr_block .main_pic .rect {
   position: absolute;
-  right: -15px;
-  top: 55%;
+  right: 0px;
+  top: 58%;
+  width: 20px;
+  height: fit-content;
+  background-color: #f00;
+  border: 10px solid #f00;
+  margin-bottom: 50px;
 }
-.intr .intr_block .pic_even img.fa-youtube {
+.intr .intr_block .main_pic .rect .tria {
+  margin: auto;
+  width: 0px;
+  height: 0px;
+  background-color: #f00;
+  border-top: 5px solid #0f00;
+  border-left: 10px solid #fff;
+  border-bottom: 5px solid #00f0;
+}
+.intr .intr_block .pic_even .rect {
   left: -10px;
 }
+
 /* 一個position */
 .intr .intr_block .main_pic .detail_intr {
   width: 70%;

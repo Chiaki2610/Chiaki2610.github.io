@@ -39,16 +39,19 @@ h1 .bottom_line {
   margin-top: 75px;
   letter-spacing: 0.5px;
 }
-.intr .intr_block .wrap_even {
-  flex-direction: row-reverse;
+.intr .intr_block:nth-child(1) {
+  background-color: pink;
 }
 .intr .intr_block .wrap {
   display: flex;
   justify-content: space-between;
 }
+.intr .intr_block .wrap_even {
+  flex-direction: row-reverse;
+}
 .intr .intr_block .wrap .grey_block {
   margin-top: 45px;
-  width: 427px;
+  width: 400px;
   height: 300px;
   background-color: #f3f3f3;
 }
@@ -86,14 +89,14 @@ h1 .bottom_line {
 .intr .intr_block .main_pic {
   z-index: 2;
   position: relative;
-  left: 20%;
+  left: 250px;
   bottom: 216px;
 }
 .intr .intr_block .pic_even {
   left: 0;
 }
 .intr .intr_block .main_pic img.main {
-  width: 900px;
+  width: 650px;
 }
 /* 一個position */
 .intr .intr_block .main_pic .rect {
@@ -156,6 +159,7 @@ h1 .bottom_line {
   padding: 1px 7.5px;
 }
 .intr .intr_block .detail_intr ul {
+  color: #666;
   list-style-type: square;
   margin-left: 20px;
   font-size: 14px;

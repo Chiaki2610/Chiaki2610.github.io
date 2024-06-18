@@ -57,7 +57,7 @@ h1 .bottom_line {
 }
 .intr .intr_block .wrap .txt_for_item {
   z-index: 3;
-  width: 342px;
+  width: 350px;
   color: #fff;
   font-weight: 100;
   background-color: #000;
@@ -121,7 +121,7 @@ h1 .bottom_line {
 
 /* 一個position */
 .intr .intr_block .main_pic .detail_intr {
-  width: 70%;
+  width: 665px;
   padding: 20px;
   background-color: #f3f3f3;
   position: absolute;
@@ -132,11 +132,22 @@ h1 .bottom_line {
   left: 61%;
 }
 .intr .intr_block .detail_intr h3.red_title {
+  display: inline;
   background-color: #f3f3f3;
   color: #c00;
   font-weight: 900;
   margin-bottom: 10px;
 }
+.intr .intr_block .detail_intr h3.red_title::after {
+  content: "";
+  display: inline-block;
+  width: 445px;
+  height: 1.5px;
+  background-color: #c00;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
 .intr .intr_block .detail_intr h3 {
   background-color: #000;
   color: #fff;

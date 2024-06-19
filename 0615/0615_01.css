@@ -37,8 +37,13 @@ h1 .bottom_line {
   letter-spacing: 0.5px;
   position: relative;
 }
+.even {
+  direction: rtl;
+}
 /* 一個relative */
 .intr .intr_block .txt_for_item {
+  direction: ltr;
+  z-index: 3;
   width: 350px;
   color: #fff;
   position: relative;
@@ -57,7 +62,6 @@ h1 .bottom_line {
 }
 /* 一個absolute */
 .intr .intr_block .txt_for_item .item_info {
-  z-index: 3;
   background-color: #000;
   position: absolute;
   padding: 10px;
@@ -71,8 +75,14 @@ h1 .bottom_line {
 }
 .intr .intr_block .main_pic {
   width: 700px;
+}
+.intr .odd .main_pic {
   margin-left: auto;
   margin-right: 50px;
+}
+.intr .even .main_pic {
+  margin-right: auto;
+  margin-left: -20px;
 }
 .intr .intr_block .main_pic a {
   display: flex;
@@ -83,8 +93,11 @@ h1 .bottom_line {
   vertical-align: middle;
   margin-right: -20px;
 }
+.even .main_pic img.main {
+  margin-left: -20px;
+}
 .intr .intr_block .main_pic .rect {
-  z-index: 4;
+  z-index: 3;
   vertical-align: middle;
   height: fit-content;
   background-color: #f00;
@@ -102,13 +115,14 @@ h1 .bottom_line {
 }
 /* 一個relative */
 .intr .intr_block .detail_intr {
+  direction: ltr;
   background-color: #f3f3f3;
   width: 640px;
   padding: 10px;
   margin-left: 10px;
   padding-top: 1em;
   position: relative;
-  z-index: 4;
+  z-index: 3;
   bottom: 20px;
 }
 .intr .intr_block .detail_intr .slg {
@@ -155,15 +169,24 @@ h1 .bottom_line {
   text-indent: -1em;
 }
 .intr .intr_block .grey_block {
+  z-index: 1;
+  margin-top: 40px;
+
+  background-color: #f3f3f3;
+}
+/* 一個absolute */
+.even .grey_block {
+  width: 500px;
+  height: 400px;
+  position: absolute;
+  right: 20%;
+  top: 0;
+}
+/* 一個absolute */
+.odd .grey_block {
+  width: 400px;
+  height: 300px;
   position: absolute;
   right: 0;
   top: 0;
-  margin-top: 40px;
-  width: 400px;
-  height: 300px;
-  background-color: #f3f3f3;
 }
-
-/* .intr .intr_block:nth-child(1) {
-  background-color: pink;
-} */

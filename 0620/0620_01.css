@@ -110,7 +110,7 @@ img{
 }
 .main_wrap .wrap .sub_pic img {
   max-width: 100%;
-  margin: 10% auto;
+  margin: 10px auto;
 }
 .main_wrap .wrap .sub_txt {
   padding: 10px;
@@ -122,9 +122,16 @@ img{
 .main_wrap .wrap .sub_txt p {
   margin: 10px 0;
 }
-.main_wrap .wrap .sub_txt i{
+.main_wrap .wrap .sub_txt a{
+  color: #f55;
+  font-size: 12px;
+  font-weight: 600;
+}
+.main_wrap .wrap .sub_txt i,
+.grid_card_list .btn_link i{
   font-size: 9px;
   padding: 5px;
+  margin-left: 3px;
   color: #f55;
   border:1px solid #f55;
   border-radius: 50%;
@@ -226,7 +233,7 @@ img{
 }
 .sub_wrap {
   min-width: 768px;
-  max-width: 1000px;
+  max-width: 1450px ;
   margin: auto;
   padding-top: 100px;
   display: flex;
@@ -256,14 +263,20 @@ img{
 }
 .grid_card_list h3.news_title {
   grid-area: 1/1/1 / span 3; 
+  margin-left: 20px;
 }
 .grid_card_list h3 span {
+  color: #555;
+  font-size: 15px;
+  font-weight: 100;
 }
-.grid_card_list .btn_link {
+.grid_card_list .btn_link{
   justify-self: end;
 }
-.grid_card_list .btn_link::after {
-  justify-self: end;
+.grid_card_list .btn_link p{
+  color: #f55;
+  font-weight: bold;
+  margin:0 20px;
 }
 .grid_card_list .card {
   display: flex;
@@ -274,22 +287,12 @@ img{
 .grid_card_list .card:nth-child(1 of .card) {
   grid-area: 2 / 1 / 4 / 3;
 }
-.grid_card_list .card .icon_class {
-}
-.grid_card_list .card .icon_class p {
-}
 .grid_card_list .card .icon_class p img.icon {
   width: 20px;
-}
-.grid_card_list .card .pic {
 }
 .grid_card_list .card .pic img {
   width: 250px;
   height: 200px;
-}
-.grid_card_list .card h4 {
-}
-.grid_card_list .card p {
 }
 .grid_card_list .card time {
   margin-top: auto;
@@ -298,53 +301,44 @@ img{
 }
 .sub_wrap .featured {
   background-image: url(/0620/ラマラハワイ/FEATURED_background_image.jpg);
+  background-repeat: round;
+  width: 100%;
+  margin: auto;
+  color: #fff;
+  padding: 20px;
 }
 .sub_wrap .featured h2 {
-}
-.sub_wrap .featured .txt {
+  border-style: solid;
+  border-color: #fff #0000 #0000 #0000;
+  border-width: 2px;
+  margin: 50px 0;
 }
 .sub_wrap .featured .txt h3 {
+  margin-bottom: 20px;
 }
 .sub_wrap .featured .txt p {
+  margin-bottom: 20px;
 }
 .sub_wrap .featured .card_list {
+  display: grid;
+  grid-template: repeat(1 auto)/repeat(2 /1fr);
 }
-.sub_wrap .featured .card_list .card {
+.sub_wrap .featured .card_list a {
+  grid-area: auto /auto /span 1/ span 1;
+  background-image: url(/0620/ラマラハワイ/ことばで知るハワイ.jpg);
+  background-repeat:round;
+  display: inline-block;
+  position: relative;
 }
-.sub_wrap .featured .card_list .card a {
+.sub_wrap .featured .card_list a.hawaii_week {
+  grid-area: 1 / 2/ 1 /2;
+  background-image: url(/0620/ラマラハワイ/Mālama\ Hawaiʻi\ Week\ 2022.jpg);
+  background-repeat:round;
 }
-.sub_wrap .featured .card_list .card a img {
-}
-.sub_wrap .featured .card_list .card a h3 {
-}
-.sub_wrap .featured .card_list .card a img.icon {
-}
-.sub_wrap .communities {
-background-color: #eee;
-}
-.sub_wrap .communities h2 {
-}
-.sub_wrap .communities .grid_card_list {
-}
-.sub_wrap .communities .grid_card_list h3 {
-}
-.sub_wrap .communities .grid_card_list .btn_link {
-}
-.sub_wrap .communities .grid_card_list .scroll_card_list {
-}
-.sub_wrap .communities .grid_card_list .scroll_card_list .scroll_card {
-  width: fit-content;
-  display: flex;
-  overflow: hidden;
-}
-.sub_wrap .communities .grid_card_list .scroll_card_list .scroll_card .communities_card {
-  width: 150px;
-  margin: 0 10px;
-}
-.sub_wrap .communities .grid_card_list .scroll_card_list .scroll_card .communities_card .partiner_pic {
-}
-
-.sub_wrap .communities .grid_card_list .scroll_card_list .scroll_card .communities_card p {
+.sub_wrap .featured .card_list a .card{
+  position: absolute;
+  bottom: 0;
+  color: #fff;
 }
 .sub_wrap .movies {
 }
@@ -364,7 +358,6 @@ background-color: #eee;
 }
 .sub_wrap .movies .grid_card_list .card p {
 }
-
 .sub_wrap .movies .grid_card_list .card video {
 }
 .sub_wrap .movies .grid_card_list .card .pic {

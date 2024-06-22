@@ -3,10 +3,297 @@
   padding: 0;
   list-style: none;
 }
+body {
+  width: 1450px
+  margin: 0 auto;
+  font-family: YakuHanJP, "游ゴシック Medium", YuGothic, YuGothicM,
+    "Noto Sans Japanese", sans-serif;
+}
 a {
   text-decoration: none;
   color: #000;
 }
-img {
-  /* width: 100%; */
+.header .main_head {
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  font-weight: 600;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.header .main_head .side_bar_btn {
+  display: flex;
+  flex-wrap: wrap;
+}
+.header .main_head .side_bar_btn a {
+  align-self: center;
+}
+.header .main_head .side_bar_btn a img {
+  width: 25px;
+}
+.header .main_head .side_bar_btn h1 {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.header .main_head .about_link {
+  align-self: center;
+}
+.header .main_head .about_link a {
+  font-size: 9px;
+  color: #f55;
+}
+.header .main_nav_bar {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 50px;
+  background-color: #eee;
+  font-weight: 600;
+}
+.header .main_nav_bar a {
+  box-sizing: border-box;
+  margin: 10px 0;
+  font-size: 10px;
+}
+.header .main_nav_bar a .nav_item {
+  display: flex;
+  flex-direction: column;
+}
+.header .main_nav_bar a .nav_item img {
+  width: 20px;
+  margin: auto;
+}
+.main {
+  margin: 50px 50px 0;
+}
+.main .main_wrap {
+  margin: 0 50px;
+}
+.main .main_wrap .wrap {
+}
+.main .main_wrap .wrap h2 {
+}
+.main .main_wrap .wrap p.slg {
+}
+.main .main_wrap .wrap .main_pic {
+}
+.main .main_wrap .wrap .main_pic img {
+}
+.main .main_wrap .wrap .main_txt {
+}
+.main .main_wrap .wrap .main_txt p {
+}
+.main .main_wrap .wrap .sub_pic {
+}
+.main .main_wrap .wrap .sub_pic img {
+}
+.main .main_wrap .wrap .sub_txt {
+}
+.main .main_wrap .wrap .sub_txt h3 {
+}
+.main .main_wrap .wrap .sub_txt p {
+}
+.main .main_wrap .wrap .sub_txt a {
+}
+.main .main_wrap .wrap h3 {
+}
+.main .main_wrap .wrap h3 span {
+}
+.main .main_wrap .wrap h4 {
+}
+.main .main_wrap .wrap .card_list {
+  display: grid;
+  grid-template: repeat(1 500px) / repeat(3 1fr);
+  justify-content: center;
+}
+.main .main_wrap .wrap .card_list .card {
+  position: relative;
+}
+.main .main_wrap .wrap .card_list .card .card_txt {
+}
+.main .main_wrap .wrap .card_list .card .card_txt h5 {
+}
+.main .main_wrap .wrap .card_list .card .card_txt .btn_link {
+}
+.main .main_wrap .wrap .card_list .card .card_txt p {
+}
+.main .main_wrap .wrap .card_list .card .card_txt h5.en_title {
+}
+.main .main_wrap .wrap .card_list .card .card_pic {
+}
+.main .main_wrap .wrap .card_list .card .card_pic img {
+  position: absolute;
+}
+.main .sub_wrap {
+  min-width: 768px;
+  max-width: 1000px;
+}
+.main .sub_wrap .latest {
+  margin: auto;
+}
+.main .sub_wrap .latest .black_line {
+}
+.main .sub_wrap .latest h2 {
+}
+.grid_card_list {
+  min-width: 768px;
+  margin-bottom: 100px;
+  display: grid;
+  grid-template: repeat(3, auto) / repeat(4, auto);
+  gap: 20px;
+}
+.grid_card_list h3 {
+  grid-area: 1/1/1 / span 3;
+}
+.grid_card_list h3 span {
+}
+.grid_card_list .btn_link {
+}
+.grid_card_list .card {
+  display: flex;
+  flex-direction: column;
+  justify-items: end;
+  box-sizing: border-box;
+}
+.grid_card_list .card:nth-child(1 of .card) {
+  grid-area: 2 / 1 / 4 / 3;
+}
+.grid_card_list .card .icon_class {
+}
+.grid_card_list .card .icon_class p {
+}
+.grid_card_list .card .icon_class p img.icon {
+  width: 20px;
+}
+.grid_card_list .card .pic {
+}
+.grid_card_list .card .pic img {
+  width: 250px;
+  height: 200px;
+}
+.grid_card_list .card h4 {
+}
+.grid_card_list .card p {
+}
+.grid_card_list .card time {
+  margin-top: auto;
+  display: block;
+  text-align: left;
+}
+.main .sub_wrap .featured {
+}
+.main .sub_wrap .featured .black_line {
+}
+.main .sub_wrap .featured h2 {
+}
+.main .sub_wrap .featured .txt {
+}
+.main .sub_wrap .featured .txt h3 {
+}
+.main .sub_wrap .featured .txt p {
+}
+.main .sub_wrap .featured .card_list {
+}
+.main .sub_wrap .featured .card_list .card {
+}
+.main .sub_wrap .featured .card_list .card a {
+}
+.main .sub_wrap .featured .card_list .card a img {
+}
+.main .sub_wrap .featured .card_list .card a h3 {
+}
+.main .sub_wrap .featured .card_list .card a img.icon {
+}
+.main .sub_wrap .communities {
+}
+.main .sub_wrap .communities .black_line {
+}
+.main .sub_wrap .communities h2 {
+}
+.main .sub_wrap .communities .grid_card_list {
+}
+.main .sub_wrap .communities .grid_card_list h3 {
+}
+.main .sub_wrap .communities .grid_card_list .btn_link {
+}
+.main .sub_wrap .communities .grid_card_list .scroll_card_list {
+}
+.main .sub_wrap .communities .grid_card_list .scroll_card_list .scroll_card {
+  width: fit-content;
+  display: flex;
+  overflow: hidden;
+}
+.main
+  .sub_wrap
+  .communities
+  .grid_card_list
+  .scroll_card_list
+  .scroll_card
+  .communities_card {
+  width: 150px;
+  margin: 0 10px;
+}
+.main
+  .sub_wrap
+  .communities
+  .grid_card_list
+  .scroll_card_list
+  .scroll_card
+  .communities_card
+  .partiner_pic {
+}
+.main
+  .sub_wrap
+  .communities
+  .grid_card_list
+  .scroll_card_list
+  .scroll_card
+  .communities_card
+  .partiner_pic
+  img {
+}
+.main
+  .sub_wrap
+  .communities
+  .grid_card_list
+  .scroll_card_list
+  .scroll_card
+  .communities_card
+  p {
+}
+.main .sub_wrap .movies {
+}
+.main .sub_wrap .movies .black_line {
+}
+.main .sub_wrap .movies h2 {
+}
+.main .sub_wrap .movies .grid_card_list .btn_link {
+}
+.main .sub_wrap .movies .grid_card_list .card .icon_class {
+}
+.main .sub_wrap .movies .grid_card_list .card .icon_class p {
+}
+.main .sub_wrap .movies .grid_card_list .card .icon_class p span {
+}
+.main .sub_wrap .movies .grid_card_list .card .pic {
+}
+.main .sub_wrap .movies .grid_card_list .card h4 {
+}
+.main .sub_wrap .movies .grid_card_list .card p {
+}
+
+.main .sub_wrap .movies .grid_card_list .card video {
+}
+.main .sub_wrap .movies .grid_card_list .card .pic {
 }

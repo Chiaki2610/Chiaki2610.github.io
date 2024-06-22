@@ -13,6 +13,9 @@ a {
   text-decoration: none;
   color: #000;
 }
+img{
+  border-radius: 25px 25px 25px 25px;
+}
 .header .main_head {
   position: fixed;
   top: 0;
@@ -21,7 +24,7 @@ a {
   justify-content: space-between;
   width: 100%;
   height: 50px;
-  background-color: #fff;
+  background-color: #fcfcfc;
   font-weight: 600;
   border-bottom: 1px solid #ddd;
   margin-bottom: 10px;
@@ -58,7 +61,7 @@ a {
   justify-content: space-evenly;
   width: 100%;
   height: 50px;
-  background-color: #eee;
+  background-color: #fefefe;
   font-weight: 600;
 }
 .header .main_nav_bar a {
@@ -75,76 +78,170 @@ a {
   margin: auto;
 }
 .main {
-  margin: 50px 50px 0;
+  margin: 50px 0;
 }
-.main .main_wrap {
-  margin: 0 50px;
+.main_wrap {
+  width: 100vw;
+  background-color: #fcfcfc;
+  padding-bottom: 50px;
 }
-.main .main_wrap .wrap {
+.main_wrap .wrap {
+  width: 100%;
+  margin-bottom: 20px;
 }
-.main .main_wrap .wrap h2 {
+.main_wrap .wrap h2 {
+  font-family:"Exo","Alegreya Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight:400;
+  font-style: normal;
+  font-size: 100px;
+  line-height: 100px;
+  /* background-color: pink; */
 }
-.main .main_wrap .wrap p.slg {
+.main_wrap .wrap p.slg {
+  margin: 10px;
+  font-weight: 600;
 }
-.main .main_wrap .wrap .main_pic {
+.main_wrap .wrap .main_pic img {
+  width: 100vw;
 }
-.main .main_wrap .wrap .main_pic img {
+.main_wrap .wrap .main_txt {
+  padding: 10px;
 }
-.main .main_wrap .wrap .main_txt {
+.main_wrap .wrap .sub_pic img {
+  max-width: 100%;
+  margin: 10% auto;
 }
-.main .main_wrap .wrap .main_txt p {
+.main_wrap .wrap .sub_txt {
+  padding: 10px;
+  margin-bottom: 40px;
 }
-.main .main_wrap .wrap .sub_pic {
+.main_wrap .wrap .sub_txt h3 {
+  font-weight: 900;
 }
-.main .main_wrap .wrap .sub_pic img {
+.main_wrap .wrap .sub_txt p {
+  margin: 10px 0;
 }
-.main .main_wrap .wrap .sub_txt {
+.main_wrap .wrap .sub_txt i{
+  font-size: 9px;
+  padding: 5px;
+  color: #f55;
+  border:1px solid #f55;
+  border-radius: 50%;
 }
-.main .main_wrap .wrap .sub_txt h3 {
+.main_wrap .wrap .future_title {
+  line-height: 40px;
+  letter-spacing: .1px;
+  font-weight: 500;
+  margin-bottom: 50px;
+  font-size: 40px;
 }
-.main .main_wrap .wrap .sub_txt p {
+.main_wrap .wrap h3 span {
+  color:#f55;
+  font-weight: 600;
 }
-.main .main_wrap .wrap .sub_txt a {
+.main_wrap .wrap h4 {
+  font-family: "微軟正黑體";
+  font-size: 9px;
+  text-align: center;
+  margin: 30px 0;
 }
-.main .main_wrap .wrap h3 {
-}
-.main .main_wrap .wrap h3 span {
-}
-.main .main_wrap .wrap h4 {
-}
-.main .main_wrap .wrap .card_list {
-  display: grid;
-  grid-template: repeat(1 500px) / repeat(3 1fr);
+.main_wrap .wrap .card_list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
+  gap: 10px;
+  
 }
-.main .main_wrap .wrap .card_list .card {
-  position: relative;
+.main_wrap .wrap .card_list .card {
+  width: 200px;
+  box-sizing: border-box;
+  border-radius: 25px 25px 25px 25px;
 }
-.main .main_wrap .wrap .card_list .card .card_txt {
+.main_wrap .wrap .card_list .card:nth-child(1 of .card){
+  background-image: url(/0620/ラマラハワイ/about_bg01.jpg);
+  background-repeat: round;
 }
-.main .main_wrap .wrap .card_list .card .card_txt h5 {
+.main_wrap .wrap .card_list .card:nth-child(2 of .card){
+  background-image: url(/0620/ラマラハワイ/about_bg02.jpg);
+  background-repeat: round;
 }
-.main .main_wrap .wrap .card_list .card .card_txt .btn_link {
+.main_wrap .wrap .card_list .card:nth-child(3 of .card){
+  background-image: url(/0620/ラマラハワイ/about_bg03.jpg);
+  background-repeat: round;
 }
-.main .main_wrap .wrap .card_list .card .card_txt p {
+.main_wrap .wrap .card_list .card .card_txt {
+  color: #fff;
 }
-.main .main_wrap .wrap .card_list .card .card_txt h5.en_title {
+.main_wrap .wrap .card_list .card .card_txt h5 {
+  margin: 10px;
+  font-size: 20px;
 }
-.main .main_wrap .wrap .card_list .card .card_pic {
+.main_wrap .wrap .card_list .card .card_txt .btn_link {
+  margin: 10px;
+  padding: 1px 5px;
+  width: 120px;
+  border:1.5px solid #fff;
+  box-sizing: border-box;
+  color: #fff;
+  background-color: #fff0;
+  border-radius: 25px 25px 25px 25px;
+  font-size: 10px;
+  margin-bottom: 30px;
 }
-.main .main_wrap .wrap .card_list .card .card_pic img {
-  position: absolute;
+/* .main_wrap .wrap .card_list .card:hover{
+  background-image:linear-gradient(#1115,#1115);
+} */
+.main_wrap .wrap .card_list .card .card_txt .btn_link:hover{
+  background-color: #fff;
+  color: #000;
 }
-.main .sub_wrap {
+.main_wrap .wrap .card_list .card .card_txt .btn_link:hover i{
+  background-color: #f55;
+  color: #fff;
+}
+.main_wrap .wrap .card_list .card .card_txt .btn_link p{
+  margin: 10px;
+  width: fit-content;
+}
+.main_wrap .wrap .card_list .card .card_txt .btn_link i{
+  font-size: 9px;
+  padding: 5px;
+  margin-left: 5px;
+  border:1px solid #f55;
+  border-radius: 50%;
+  color: #f55;
+  background-color: #f550;
+}
+.main_wrap .wrap .card_list .card .card_txt .main_wrap_card_p {
+  margin: 10px;
+  font-size: 15px;
+}
+.main_wrap .wrap .card_list .card .card_txt h5.en_title {
+  font-size: 9px;
+  color: #ccc;
+  text-align: center;
+  margin-top: auto;
+}
+.sub_wrap {
   min-width: 768px;
   max-width: 1000px;
-}
-.main .sub_wrap .latest {
   margin: auto;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
 }
-.main .sub_wrap .latest .black_line {
+.sub_wrap .latest {
+  margin: auto;
+  width: 100%;
 }
-.main .sub_wrap .latest h2 {
+.sub_wrap .latest h2 {
+  border-style: solid;
+  border-color: #000 #0000 #0000 #0000;
+  border-width: 2px;
+  padding: 20px 0;
+  margin-bottom: 50px;
 }
 .grid_card_list {
   min-width: 768px;
@@ -152,13 +249,21 @@ a {
   display: grid;
   grid-template: repeat(3, auto) / repeat(4, auto);
   gap: 20px;
+  border-style: solid;
+  border-color: #ddd #0000 #0000 #0000;
+  border-width: 2px;
+  padding: 20px 0;
 }
-.grid_card_list h3 {
-  grid-area: 1/1/1 / span 3;
+.grid_card_list h3.news_title {
+  grid-area: 1/1/1 / span 3; 
 }
 .grid_card_list h3 span {
 }
 .grid_card_list .btn_link {
+  justify-self: end;
+}
+.grid_card_list .btn_link::after {
+  justify-self: end;
 }
 .grid_card_list .card {
   display: flex;
@@ -191,109 +296,76 @@ a {
   display: block;
   text-align: left;
 }
-.main .sub_wrap .featured {
+.sub_wrap .featured {
+  background-image: url(/0620/ラマラハワイ/FEATURED_background_image.jpg);
 }
-.main .sub_wrap .featured .black_line {
+.sub_wrap .featured h2 {
 }
-.main .sub_wrap .featured h2 {
+.sub_wrap .featured .txt {
 }
-.main .sub_wrap .featured .txt {
+.sub_wrap .featured .txt h3 {
 }
-.main .sub_wrap .featured .txt h3 {
+.sub_wrap .featured .txt p {
 }
-.main .sub_wrap .featured .txt p {
+.sub_wrap .featured .card_list {
 }
-.main .sub_wrap .featured .card_list {
+.sub_wrap .featured .card_list .card {
 }
-.main .sub_wrap .featured .card_list .card {
+.sub_wrap .featured .card_list .card a {
 }
-.main .sub_wrap .featured .card_list .card a {
+.sub_wrap .featured .card_list .card a img {
 }
-.main .sub_wrap .featured .card_list .card a img {
+.sub_wrap .featured .card_list .card a h3 {
 }
-.main .sub_wrap .featured .card_list .card a h3 {
+.sub_wrap .featured .card_list .card a img.icon {
 }
-.main .sub_wrap .featured .card_list .card a img.icon {
+.sub_wrap .communities {
+background-color: #eee;
 }
-.main .sub_wrap .communities {
+.sub_wrap .communities h2 {
 }
-.main .sub_wrap .communities .black_line {
+.sub_wrap .communities .grid_card_list {
 }
-.main .sub_wrap .communities h2 {
+.sub_wrap .communities .grid_card_list h3 {
 }
-.main .sub_wrap .communities .grid_card_list {
+.sub_wrap .communities .grid_card_list .btn_link {
 }
-.main .sub_wrap .communities .grid_card_list h3 {
+.sub_wrap .communities .grid_card_list .scroll_card_list {
 }
-.main .sub_wrap .communities .grid_card_list .btn_link {
-}
-.main .sub_wrap .communities .grid_card_list .scroll_card_list {
-}
-.main .sub_wrap .communities .grid_card_list .scroll_card_list .scroll_card {
+.sub_wrap .communities .grid_card_list .scroll_card_list .scroll_card {
   width: fit-content;
   display: flex;
   overflow: hidden;
 }
-.main
-  .sub_wrap
-  .communities
-  .grid_card_list
-  .scroll_card_list
-  .scroll_card
-  .communities_card {
+.sub_wrap .communities .grid_card_list .scroll_card_list .scroll_card .communities_card {
   width: 150px;
   margin: 0 10px;
 }
-.main
-  .sub_wrap
-  .communities
-  .grid_card_list
-  .scroll_card_list
-  .scroll_card
-  .communities_card
-  .partiner_pic {
-}
-.main
-  .sub_wrap
-  .communities
-  .grid_card_list
-  .scroll_card_list
-  .scroll_card
-  .communities_card
-  .partiner_pic
-  img {
-}
-.main
-  .sub_wrap
-  .communities
-  .grid_card_list
-  .scroll_card_list
-  .scroll_card
-  .communities_card
-  p {
-}
-.main .sub_wrap .movies {
-}
-.main .sub_wrap .movies .black_line {
-}
-.main .sub_wrap .movies h2 {
-}
-.main .sub_wrap .movies .grid_card_list .btn_link {
-}
-.main .sub_wrap .movies .grid_card_list .card .icon_class {
-}
-.main .sub_wrap .movies .grid_card_list .card .icon_class p {
-}
-.main .sub_wrap .movies .grid_card_list .card .icon_class p span {
-}
-.main .sub_wrap .movies .grid_card_list .card .pic {
-}
-.main .sub_wrap .movies .grid_card_list .card h4 {
-}
-.main .sub_wrap .movies .grid_card_list .card p {
+.sub_wrap .communities .grid_card_list .scroll_card_list .scroll_card .communities_card .partiner_pic {
 }
 
-.main .sub_wrap .movies .grid_card_list .card video {
+.sub_wrap .communities .grid_card_list .scroll_card_list .scroll_card .communities_card p {
 }
-.main .sub_wrap .movies .grid_card_list .card .pic {
+.sub_wrap .movies {
+}
+.sub_wrap .movies h2 {
+}
+.sub_wrap .movies .grid_card_list .btn_link {
+}
+.sub_wrap .movies .grid_card_list .card .icon_class {
+}
+.sub_wrap .movies .grid_card_list .card .icon_class p {
+}
+.sub_wrap .movies .grid_card_list .card .icon_class p span {
+}
+.sub_wrap .movies .grid_card_list .card .pic {
+}
+.sub_wrap .movies .grid_card_list .card h4 {
+}
+.sub_wrap .movies .grid_card_list .card p {
+}
+
+.sub_wrap .movies .grid_card_list .card video {
+}
+.sub_wrap .movies .grid_card_list .card .pic {
 }

@@ -17,6 +17,7 @@ img{
   border-radius: 25px 25px 25px 25px;
 }
 .header .main_head {
+  z-index: 3;
   position: fixed;
   top: 0;
   display: flex;
@@ -54,6 +55,7 @@ img{
   color: #f55;
 }
 .header .main_nav_bar {
+  z-index: 3;
   position: fixed;
   bottom: 0;
   display: flex;
@@ -78,7 +80,7 @@ img{
   margin: auto;
 }
 .main {
-  margin: 50px 0;
+  margin-top: 50px;
 }
 .main_wrap {
   width: 100vw;
@@ -341,24 +343,30 @@ img{
   color: #fff;
 }
 .sub_wrap .movies {
+  margin-top: 50px;
+  padding: 20px;
+  z-index: 0;
 }
 .sub_wrap .movies h2 {
+  border-style: solid;
+  border-color: #000 #0000 #0000 #0000;
+  border-width: 2px;
+  padding-top: 20px;
+  margin-bottom: 50px;
+
 }
-.sub_wrap .movies .grid_card_list .btn_link {
+.sub_wrap .movies .movie{
+  background-color: #333;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 0 ;
 }
-.sub_wrap .movies .grid_card_list .card .icon_class {
+.sub_wrap .movies .movie .card video {
+  display: grid;
+  grid-template:repeat(2 auto) / repeat(4 1fr) ;
+  gap: 10px;
+  
 }
-.sub_wrap .movies .grid_card_list .card .icon_class p {
-}
-.sub_wrap .movies .grid_card_list .card .icon_class p span {
-}
-.sub_wrap .movies .grid_card_list .card .pic {
-}
-.sub_wrap .movies .grid_card_list .card h4 {
-}
-.sub_wrap .movies .grid_card_list .card p {
-}
-.sub_wrap .movies .grid_card_list .card video {
-}
-.sub_wrap .movies .grid_card_list .card .pic {
+.sub_wrap .movies .movie .card:nth-child(1 of .card){
+  grid-area: 1/1/1/span 4;
 }

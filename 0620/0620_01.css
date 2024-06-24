@@ -164,7 +164,9 @@ img{
   
 }
 .main_wrap .wrap .card_list .card {
-  width: 200px;
+  position: relative;
+  width: 300px;
+  height: 380px;
   box-sizing: border-box;
   border-radius: 25px 25px 25px 25px;
 }
@@ -188,7 +190,7 @@ img{
   font-size: 20px;
 }
 .main_wrap .wrap .card_list .card .card_txt .btn_link {
-  margin: 10px;
+  margin: 20px auto;
   padding: 1px 5px;
   width: 120px;
   border:1.5px solid #fff;
@@ -202,14 +204,6 @@ img{
 /* .main_wrap .wrap .card_list .card:hover{
   background-image:linear-gradient(#1115,#1115);
 } */
-.main_wrap .wrap .card_list .card .card_txt .btn_link:hover{
-  background-color: #fff;
-  color: #000;
-}
-.main_wrap .wrap .card_list .card .card_txt .btn_link:hover i{
-  background-color: #f55;
-  color: #fff;
-}
 .main_wrap .wrap .card_list .card .card_txt .btn_link p{
   margin: 10px;
   width: fit-content;
@@ -226,12 +220,27 @@ img{
 .main_wrap .wrap .card_list .card .card_txt .main_wrap_card_p {
   margin: 10px;
   font-size: 15px;
+  display: none;
+}
+.main_wrap .wrap .card_list .card:hover .card_txt .main_wrap_card_p{
+  display: block;
+}
+.main_wrap .wrap .card_list .card:hover .card_txt .btn_link{
+  background-color: #fff;
+  color: #000;
+}
+.main_wrap .wrap .card_list .card:hover .card_txt .btn_link i{
+  background-color: #f55;
+  color: #fff;
 }
 .main_wrap .wrap .card_list .card .card_txt h5.en_title {
   font-size: 9px;
   color: #ccc;
   text-align: center;
   margin-top: auto;
+  position: absolute;
+  bottom: 0;
+
 }
 .sub_wrap {
   min-width: 768px;

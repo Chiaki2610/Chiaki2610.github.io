@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess Number</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      body {
+        margin: auto;
+        font-family: ;
+      }
+      .main {
+        margin: 0 auto;
+        width: 500px;
+        height: 400px;
+        background-image: url(/0624/star.jpg);
+        background-repeat: round;
+        position: relative;
+      }
+      .main h1 {
+        color: #fff;
+        text-align: center;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+      }
+      .main .game_block {
+        text-align: center;
+        width: 500px;
+      }
+      textarea {
+        width: 400px;
+      }
+      label {
+        width: 500px;
+        color: #fff;
+        font-size: 20px;
+      }
+      .input {
+        display: flex;
+        margin-top: 20px;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+      input {
+        margin-top: 10px;
+        font-size: 20px;
+        width: 200px;
+      }
+      button {
+        width: 50px;
+        height: 50px;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1 class="title">Guess Number</h1>
+      <div class="game_block">
+        <div class="output">
+          <textarea class="output_area" rows="10"></textarea>
+        </div>
+
+        <div class="input">
+          <label>答案輸入框</label>
+          <input type="text" id="guess_input" />
+          <button class="guess_btn">送出 <br />答案</button>
+          <button class="answer_btn">偷看<br />答案</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const maxNum = 100;
+      function answer() {
+        return Math.floor(Math.random() * (maxNum + 1));
+      }
+      let ansNum = answer(maxNum);
+      const ansBtn = document.querySelector(".answer_btn");
+      const guessBtn = document.querySelector(".guess_btn");
+      const input = document.querySelector("#guess_input");
+      const outputArea = document.querySelector(".output_area");
+
+      function ansClick() {
+        alert(ansNum);
+      }
+      ansBtn.addEventListener("click", ansClick);
+
+      function displayResult() {
+        if (input.value == ansNum) {
+          return (outputArea.textContent = "恭喜你答對了！！！！");
+        }
+        // if (Number.isNaN) {
+        //   return (outputArea.textContent = "輸入數字很難嗎？？？");
+        // }
+        return (outputArea.textContent += `你猜的是${input.value};`);
+      }
+      guessBtn.addEventListener("click", displayResult);
+    </script>
+  </body>
+</html>

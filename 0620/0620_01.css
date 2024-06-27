@@ -6,8 +6,7 @@
 body {
   width: 1450px
   margin: 0 auto;
-  font-family: YakuHanJP, "游ゴシック Medium", YuGothic, YuGothicM,
-    "Noto Sans Japanese", sans-serif;
+  font-family:YuGothic, YuGothicM,sans-serif;
 }
 a {
   text-decoration: none;

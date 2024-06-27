@@ -18,24 +18,24 @@ a {
   text-decoration: none;
   font-size: 15px;
 }
-.wrap1,
-.wrap3 {
-  padding: 50px;
+.header,
+.functions {
+  margin: auto;
+  padding: 50px 0;
   background-color: #f5f5f5;
 }
-.wrap2 {
-  width: 1200px;
+.wrap {
+  width: 768px;
   margin: auto;
+  box-sizing: border-box;
 }
-.wrap3 {
-  margin-top: 50px;
-}
-.wrap1 h1 {
+
+.header h1 {
   margin: auto;
   width: 300px;
   font-size: 25px;
 }
-.wrap1 p {
+.header p {
   margin-top: 20px;
   font-size: 15px;
 }
@@ -43,15 +43,14 @@ a {
   display: flex;
   flex-wrap: wrap;
 }
-.feature:nth-child(even) {
-  flex-direction: row-reverse;
-}
 .feature {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
   text-align: left;
   margin-top: 60px;
+}
+.feature .pic img {
+  width: 75%;
+  vertical-align: top;
+  margin: auto;
 }
 .feature .txt {
   padding: 50px;
@@ -61,18 +60,14 @@ a {
   margin: 10px 0;
 }
 .feature .txt p {
-  width: 90%;
   margin-top: 20px;
   font-size: 15px;
 }
 .feature .txt .list {
-  display: flex;
-  flex-wrap: wrap;
   margin: 20px 0;
   font-size: 15px;
 }
 .feature .txt ul {
-  margin: 0 50px 0 5px;
   list-style: none;
   line-height: 35px;
 }
@@ -83,10 +78,6 @@ a {
 .feature .txt a span:hover {
   margin-right: 20px;
   transition: all 0.5s 0s ease;
-}
-.feature .pic img {
-  width: 100%;
-  vertical-align: top;
 }
 .fa-arrow-right {
   color: dodgerblue;
@@ -111,14 +102,11 @@ a {
   width: 140px;
   height: 2px;
 }
-.wrap3 .col {
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  width: 83%;
+.functions {
+  margin-top: 50px;
 }
-.wrap3 h2 {
-  margin: 20px 0 30px 0;
+.functions h2 {
+  margin: 30px 0;
   font-size: 25px;
 }
 .more-function {
@@ -130,7 +118,28 @@ a {
 }
 .more-function p {
   margin: auto;
-  padding: 0 0 20px 0;
+  padding-bottom: 20px;
   width: 70%;
   font-weight: normal;
+}
+@media screen and (min-width: 768px) {
+  .wrap {
+    width: 1200px;
+  }
+  .feature {
+    flex-direction: row;
+  }
+  .feature:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+  .feature,
+  .feature .txt .list,
+  .functions .col {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .feature .pic img {
+    width: 100%;
+    vertical-align: top;
+  }
 }

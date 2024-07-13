@@ -1,0 +1,571 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body {
+  margin: 0 auto;
+  font-family: YuGothic, YuGothicM, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+img {
+  border-radius: 25px 25px 25px 25px;
+}
+.header .main_head {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+  background-color: #fcfcfc;
+  font-weight: 600;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.header .main_head .side_bar_btn {
+  display: flex;
+  flex-wrap: wrap;
+}
+.header .main_head .side_bar_btn a {
+  align-self: center;
+}
+.header .main_head .side_bar_btn > a img {
+  width: 25px;
+}
+.header .main_head .side_bar_btn > h1 {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.main_wrap .wrap .main_txt .add_br:after {
+  content: "\A";
+  white-space: pre;
+}
+.header .main_head .about_link .about_link_txt {
+  align-self: center;
+}
+.header .main_head .about_link .about_link_txt,
+.about_link_txt2 {
+  font-size: 9px;
+  color: #f55;
+}
+.header .main_nav_bar {
+  z-index: 3;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 50px;
+  background-color: #fefefe;
+  font-weight: 600;
+}
+.header .main_nav_bar a {
+  box-sizing: border-box;
+  margin: 10px 0;
+  font-size: 10px;
+}
+.header .main_nav_bar a .nav_item {
+  display: flex;
+  flex-direction: column;
+}
+.header .main_nav_bar a .nav_item img {
+  width: 20px;
+  margin: auto;
+}
+.main {
+  margin-top: 50px;
+}
+.main_wrap {
+  width: 100%;
+  background-color: #fcfcfc;
+  padding-bottom: 50px;
+}
+.main_wrap .wrap {
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+}
+.main_wrap .wrap h2 {
+  font-family: "Exo", "Alegreya Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 100px;
+  line-height: 100px;
+}
+.main_wrap .wrap p.slg {
+  margin: 10px;
+  font-weight: 600;
+}
+.main_wrap .wrap .main_pic {
+  margin: 10px;
+}
+.main_wrap .wrap .main_pic img {
+  width: 100%;
+}
+.main_wrap .wrap .main_txt {
+  padding: 10px;
+  color: #555;
+  letter-spacing: 2px;
+  line-height: 30px;
+}
+
+.main_wrap .wrap .sub_pic img {
+  max-width: 100%;
+  margin: 10px auto;
+}
+.main_wrap .wrap .sub_txt {
+  padding: 10px;
+  margin-bottom: 40px;
+  color: #555;
+  letter-spacing: 2px;
+  line-height: 30px;
+}
+.main_wrap .wrap .sub_txt h3 {
+  font-weight: 900;
+}
+.main_wrap .wrap .sub_txt p {
+  margin: 10px 0;
+}
+.main_wrap .wrap .sub_txt a {
+  color: #f55;
+  font-size: 12px;
+  font-weight: 600;
+}
+.main_wrap .wrap .sub_txt i,
+.grid_card_list .btn_link i {
+  font-size: 9px;
+  padding: 5px;
+  margin-left: 3px;
+  color: #f55;
+  border: 1px solid #f55;
+  border-radius: 50%;
+}
+.main_wrap .wrap .future_title {
+  line-height: 40px;
+  letter-spacing: 0.1px;
+  font-weight: 500;
+  margin-bottom: 50px;
+  font-size: 40px;
+}
+.main_wrap .wrap h3 span {
+  color: #f55;
+  font-weight: 600;
+}
+.main_wrap .wrap h4 {
+  font-family: "微軟正黑體";
+  font-size: 9px;
+  text-align: center;
+  margin: 30px 0;
+}
+.main_wrap .wrap .card_list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+.main_wrap .wrap .card_list .card {
+  position: relative;
+  width: 30%;
+  max-width: 300px;
+  height: 380px;
+  box-sizing: border-box;
+  border-radius: 25px 25px 25px 25px;
+}
+.main_wrap .wrap .card_list .card:nth-child(1 of .card) {
+  background-image: url(/0620/ラマラハワイ/about_bg01.jpg);
+  background-repeat: round;
+}
+.main_wrap .wrap .card_list .card:nth-child(2 of .card) {
+  background-image: url(/0620/ラマラハワイ/about_bg02.jpg);
+  background-repeat: round;
+}
+.main_wrap .wrap .card_list .card:nth-child(3 of .card) {
+  background-image: url(/0620/ラマラハワイ/about_bg03.jpg);
+  background-repeat: round;
+}
+.main_wrap .wrap .card_list .card .card_txt {
+  color: #fff;
+}
+.main_wrap .wrap .card_list .card .card_txt h5 {
+  margin: 10px;
+  font-size: 20px;
+}
+.main_wrap .wrap .card_list .card .card_txt .btn_link {
+  margin: 20px auto;
+  padding: 1px 5px;
+  width: 120px;
+  border: 1.5px solid #fff;
+  box-sizing: border-box;
+  color: #fff;
+  background-color: #fff0;
+  border-radius: 25px 25px 25px 25px;
+  font-size: 10px;
+  margin-bottom: 30px;
+}
+.main_wrap .wrap .card_list .card .card_txt .btn_link p {
+  margin: 10px;
+  width: fit-content;
+}
+.main_wrap .wrap .card_list .card .card_txt .btn_link i {
+  font-size: 9px;
+  padding: 5px;
+  margin-left: 5px;
+  border: 1px solid #f55;
+  border-radius: 50%;
+  color: #f55;
+  background-color: #f550;
+}
+.main_wrap .wrap .card_list .card .card_txt .main_wrap_card_p {
+  margin: 10px;
+  font-size: 15px;
+  display: none;
+}
+.main_wrap .wrap .card_list .card:hover .card_txt .main_wrap_card_p {
+  display: block;
+}
+.main_wrap .wrap .card_list .card:hover .card_txt .btn_link {
+  background-color: #fff;
+  color: #000;
+}
+.main_wrap .wrap .card_list .card:hover .card_txt .btn_link i {
+  background-color: #f55;
+  color: #fff;
+}
+.main_wrap .wrap .card_list .card .card_txt h5.en_title {
+  font-size: 9px;
+  color: #ccc;
+  text-align: center;
+  margin-top: auto;
+  position: absolute;
+  bottom: 0;
+}
+.sub_wrap {
+  min-width: 768px;
+  max-width: 1000px;
+  margin: auto;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+.sub_wrap .latest {
+  margin: auto;
+  width: 100%;
+}
+.sub_wrap .latest h2 {
+  border-style: solid;
+  border-color: #000 #0000 #0000 #0000;
+  border-width: 2px;
+  padding: 20px 0;
+  margin-bottom: 50px;
+}
+.grid_card_list {
+  min-width: 768px;
+  margin-bottom: 100px;
+  display: grid;
+  grid-template: repeat(5, auto) / repeat(2, auto);
+  gap: 20px;
+  border-style: solid;
+  border-color: #ddd #0000 #0000 #0000;
+  border-width: 2px;
+  padding: 20px 0;
+}
+.grid_card_list:nth-child(odd) {
+  grid-auto-flow: dense;
+  direction: rtl;
+}
+.grid_card_list h3.news_title {
+  grid-area: 1/1/1/1;
+  margin-left: 20px;
+}
+.grid_card_list h3 span {
+  color: #555;
+  font-size: 15px;
+  font-weight: 100;
+}
+.grid_card_list .btn_link {
+  grid-area: 1 / 2 / 1 / 2;
+  justify-self: end;
+}
+.grid_card_list .btn_link p {
+  color: #f55;
+  font-weight: bold;
+  margin: 0 20px;
+}
+.grid_card_list .card {
+  display: flex;
+  flex-direction: column;
+  justify-items: end;
+  box-sizing: border-box;
+}
+.grid_card_list .card .icon_class p img.icon {
+  width: 20px;
+}
+.grid_card_list .card .pic img {
+  width: 100%;
+  height: 200px;
+  vertical-align: top;
+}
+.grid_card_list .card:nth-child(1 of .card) {
+  grid-area: 2/1 / span 2 / span 2;
+}
+.grid_card_list .card:nth-child(1 of .card) .pic img {
+  width: 100%;
+  height: 400px;
+  vertical-align: top;
+}
+.grid_card_list .card time {
+  margin-top: auto;
+  display: block;
+  text-align: left;
+}
+.sub_wrap .featured {
+  background-image: url(/0620/ラマラハワイ/FEATURED_background_image.jpg);
+  background-repeat: round;
+  width: 100%;
+  margin: auto;
+  color: #fff;
+  padding: 20px;
+}
+.sub_wrap .featured h2 {
+  border-style: solid;
+  border-color: #fff #0000 #0000 #0000;
+  border-width: 2px;
+  margin: 50px 0;
+}
+.sub_wrap .featured .txt h3 {
+  margin-bottom: 20px;
+}
+.sub_wrap .featured .txt p {
+  margin-bottom: 20px;
+}
+.sub_wrap .featured .card_list {
+  display: grid;
+  grid-template: repeat(1 auto) / repeat(2 /1fr);
+}
+.sub_wrap .featured .card_list a {
+  display: block;
+  height: 300px;
+  margin: 10px;
+  padding: 0 10px;
+  grid-area: auto / auto / span 1 / span 1;
+  background-image: url(/0620/ラマラハワイ/ことばで知るハワイ.jpg);
+  background-repeat: round;
+  display: inline-block;
+  position: relative;
+  bottom: -50px;
+  border-radius: 20px;
+}
+.sub_wrap .featured .card_list a.hawaii_week {
+  grid-area: 1 / 2/ 1 /2;
+  background-image: url(/0620/ラマラハワイ/Mālama\ Hawaiʻi\ Week\ 2022.jpg);
+  background-repeat: round;
+}
+.sub_wrap .featured .card_list a .card {
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+}
+.sub_wrap .movies {
+  margin-top: 50px;
+  padding: 20px;
+  z-index: 0;
+}
+.sub_wrap .movies h2 {
+  border-style: solid;
+  border-color: #000 #0000 #0000 #0000;
+  border-width: 2px;
+  padding-top: 20px;
+  margin-bottom: 50px;
+}
+.sub_wrap .movies .movie {
+  background-color: #333;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+.sub_wrap .movies .movie .card video {
+  display: grid;
+  grid-template: repeat(2 auto) / repeat(4 1fr);
+  gap: 10px;
+}
+.sub_wrap .movies .movie .card:nth-child(1 of .card) {
+  grid-area: 1/1/1 / span 4;
+}
+@media screen and (max-width: 768px) {
+  .header .main_head .side_bar_btn p,
+  .header .main_head .about_link .about_link_pic,
+  .sub_nav_bar,
+  .scroll_icon {
+    display: none;
+  }
+  .main_wrap .wrap .main_txt .add_br::after {
+    content: "\A";
+    white-space: pre;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header .main_nav_bar {
+    display: none;
+  }
+  .header .main_head {
+    position: absolute;
+    height: 100px;
+  }
+  .header .main_head .side_bar_btn a {
+    margin: 20px;
+  }
+  .header .main_head .side_bar_btn h1 {
+    position: absolute;
+    font-size: 30px;
+    margin-top: 20px;
+    left: 40%;
+    font-family: "Exo", "Alegreya Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .header .main_head .side_bar_btn p {
+    margin: 20px;
+    font-size: 10px;
+    font-weight: normal;
+    letter-spacing: 3px;
+    color: #555;
+  }
+  .header .main_head .about_link .about_link_txt {
+    display: none;
+  }
+  .header .main_head .about_link .about_link_pic {
+    margin: 20px;
+  }
+  .header .main_head .about_link .about_link_pic img {
+    width: 120px;
+    height: 40px;
+  }
+  .sub_nav_bar {
+    margin: 100px 0;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+  }
+  .about_link_txt2 {
+    margin: 10px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  .sub_nav_bar .nav_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .sub_nav_bar .nav_wrap .main_link {
+    padding: 5px;
+  }
+  .sub_nav_bar .nav_wrap .main_link:hover {
+    border-bottom: 3px solid #000;
+  }
+  .main .main_wrap {
+    margin-top: 250px;
+  }
+  .main .main_wrap .wrap h2 {
+    position: absolute;
+    right: 90px;
+    top: -125px;
+    z-index: 4;
+    font-weight: 600;
+    font-size: 150px;
+    line-height: 150px;
+  }
+  .main .main_wrap .wrap .slg {
+    font-size: 25px;
+    margin: 50px 50px 50px 100px;
+    letter-spacing: 10px;
+  }
+  .main .main_wrap .wrap_for_media {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .main .main_wrap .wrap .main_pic {
+    width: 70%;
+    margin-left: 0;
+  }
+
+  .main .main_wrap .wrap .main_txt {
+    width: 20%;
+  }
+  .main .main_wrap .wrap .main_txt p {
+    writing-mode: vertical-rl;
+  }
+  .main .main_wrap .wrap .sub_pic {
+    width: 550px;
+    position: absolute;
+    top: -150px;
+    left: 150px;
+  }
+  .main .main_wrap .wrap .sub_txt {
+    width: 550px;
+    position: relative;
+    right: -750px;
+    top: 50px;
+    margin-bottom: 100px;
+  }
+  .main .main_wrap .wrap .sub_txt .sub_txt_title::after {
+    content: "\A";
+    white-space: pre;
+  }
+  .main .main_wrap .wrap .sub_txt .sub_txt_title {
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 50px;
+    color: #000;
+    letter-spacing: 2px;
+  }
+  .main .main_wrap .wrap .future_title {
+    font-size: 75px;
+    line-height: 75px;
+    margin-left: 75px;
+  }
+  .grid_card_list {
+    grid-template: repeat(3, auto) / repeat(4, auto);
+  }
+  .grid_card_list:nth-child(odd) {
+    grid-auto-flow: dense;
+    direction: rtl;
+  }
+  .grid_card_list h3.news_title {
+    grid-area: 1/1/1 / span 3;
+  }
+  .grid_card_list .btn_link {
+    grid-area: 1/4/1/5;
+  }
+  .grid_card_list .card:nth-child(1 of .card) {
+    grid-area: 2/1/4/3;
+  }
+  .grid_card_list .card:nth-child(1 of .card) .pic img {
+    width: 100%;
+    height: 300px;
+    vertical-align: top;
+  }
+  .icon_class {
+    font-size: 12px;
+  }
+}

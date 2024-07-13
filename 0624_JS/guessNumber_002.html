@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cipher</title>
+    <link rel="stylesheet" href="guessNumber_002.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- <div class="index">
+      <h1 class="title">Cipher</h1>
+      <label class="game_start">Game Start</label>
+      <label class="toggle">
+        <input type="checkbox" />
+        <span></span>
+      </label>
+    </div> -->
+    <div class="container">
+      <h1 class="title">Cipher</h1>
+      <div class="game_block">
+        <div class="output">
+          <textarea class="output_area" rows="10">
+請輸入1至100之間的數字</textarea
+          >
+        </div>
+        <div class="input">
+          <!-- <label>答案輸入框</label> -->
+          <input type="text" id="guess_input" />
+          <button class="guess_btn">Submit</button>
+          <button class="answer_btn">Peek</button>
+          <button class="reset_btn">Reset</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const ansBtn = document.querySelector(".answer_btn");
+      const guessBtn = document.querySelector(".guess_btn");
+      const input = document.querySelector("#guess_input");
+      const outputArea = document.querySelector(".output_area");
+      const resetBtn = document.querySelector(".reset_btn");
+      let maxNum = 100;
+      let minNum = 1;
+      function answer() {
+        return Math.floor(Math.random() * (maxNum + 1));
+      }
+      let ansNum = answer(maxNum);
+      function reset() {
+        maxNum = 100;
+        minNum = 1;
+        ansNum = answer(maxNum);
+        outputArea.textContent = `我們重來囉> Q <`;
+      }
+      resetBtn.addEventListener("click", reset);
+
+      function ansClick() {
+        alert(ansNum);
+      }
+      ansBtn.addEventListener("click", ansClick);
+
+      function displayResult() {
+        if (input.value <= 0) {
+          return (outputArea.textContent = `請確認猜的數字符合規定`);
+        }
+        if (input.value > 100) {
+          return (outputArea.textContent = `請確認猜的數字符合規定`);
+        }
+        if (input.value == ansNum) {
+          return (outputArea.textContent = "恭喜你答對了！！！！");
+        }
+        if (input.value < ansNum) {
+          minNum = input.value;
+          return (outputArea.textContent = `在${minNum}到${maxNum}之間`);
+        }
+        if (input.value > ansNum) {
+          maxNum = input.value;
+          return (outputArea.textContent = `在${minNum}到${maxNum}之間`);
+        }
+        return (outputArea.textContent = `請確認猜的數字符合規定`);
+      }
+      guessBtn.addEventListener("click", displayResult);
+    </script>
+  </body>
+</html>

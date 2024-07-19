@@ -1,6 +1,7 @@
 addEventListener("DOMContentLoaded", function () {
   const saveBtn = document.querySelector(".saveBtn");
   const removeBtn = document.querySelector(".removeBtn");
+  const todayBtn = document.querySelector(".backBtn");
   let currentYear = new Date().getFullYear();
   let currentMonth = new Date().getMonth() + 1;
   // 月份由0開始至11代表1至12月，故month+1
@@ -121,6 +122,20 @@ addEventListener("DOMContentLoaded", function () {
     const [year, month, day] = date.split("-");
     return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
   }
+
+  todayBtn.addEventListener("click", function (event) {
+    const today = new Date();
+    currentYear = today.getFullYear();
+    currentMonth = today.getMonth() + 1;
+    updateCalendar();
+
+    const todayCell = document.querySelector(".today");
+    if (todayCell) {
+      // element.scrollIntoView() behavior設置smooth可以滑順的回到指定位置!!!
+      //behavior:instant(跳躍式)
+      todayCell.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  });
 
   saveBtn.addEventListener("click", function (event) {
     const eventTitle = document.querySelector("#eventTitle").value.trim();

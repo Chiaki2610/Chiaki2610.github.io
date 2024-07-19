@@ -20,6 +20,18 @@
         padding: 0;
         list-style: none;
       }
+      body {
+        background-image: linear-gradient(to top, aqua, #ff5);
+        height: 95vh;
+      }
+      h1 {
+        font-family: Comic Sans MS, Comic Sans, cursive;
+        font-size: 50px;
+        color: #6495ed;
+      }
+      .outsideBtn {
+        top: 85px;
+      }
       table {
         table-layout: fixed;
         width: 100%;
@@ -30,7 +42,7 @@
         border: 1px solid #dee2e6;
         padding: 10px;
         vertical-align: top;
-        height: 75px;
+        height: 80px;
       }
       td {
         cursor: pointer;
@@ -39,7 +51,7 @@
         background-color: #83a8cc;
       }
       tbody tr td.today {
-        background-color: #eee;
+        background-color: #9ebedd;
       }
       .event {
         background-color: #ffd700;
@@ -58,14 +70,19 @@
       <div class="text-center mb-3" id="currentMonthYear">
         <!-- 用Java Script顯示當前年份-月份 -->
       </div>
-      <button
-        type="button"
-        class="btn btn-danger position-absolute addBtn"
-        data-bs-toggle="modal"
-        data-bs-target="#staticBackdrop"
-      >
-        +
-      </button>
+      <div class="button-group outsideBtn position-absolute">
+        <button
+          type="button"
+          class="btn btn-outline-primary addBtn"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+        >
+          Add
+        </button>
+        <button type="button" class="btn btn-outline-primary backBtn">
+          Today
+        </button>
+      </div>
       <div id="calendar" class="table-responsive">
         <!-- 用Java Script產生一組calendar table -->
       </div>

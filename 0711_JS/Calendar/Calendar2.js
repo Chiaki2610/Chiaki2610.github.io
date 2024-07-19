@@ -37,12 +37,6 @@ addEventListener("DOMContentLoaded", function () {
         today.getMonth() + 1 === month &&
         today.getDate() === day;
 
-      //   const storedEvent = localStorage.getItem(key);
-      //eventClass和eventTitle邏輯有問題，無法成功新增事件在表格中
-      //   const eventClass = storedEvent ? "event" : "";
-      //因為key值重新定義，所以下方取得eventTitle的邏輯要變(重新設定紀錄儲存型態)
-      //   const eventId = storedEvent ? JSON.parse(storedEvent).id : "";
-
       calendar += `<td class="${
         isToday ? "today" : ""
       }" data-date="${year}-${month}-${day}">${day}
@@ -52,6 +46,7 @@ addEventListener("DOMContentLoaded", function () {
     calendar += "</tr></tbody></table>";
     return calendar;
   }
+
   //將日曆table塞到html並更新當前年份-月份
   function updateCalendar() {
     document.getElementById("calendar").innerHTML = generateCalendar(
@@ -63,17 +58,20 @@ addEventListener("DOMContentLoaded", function () {
     ).textContent = `${currentYear} - ${currentMonth}`;
     displayTodoListAtOrderDate();
   }
+
   //獲取localStorage資料
   function getTodoListFromStorage(key) {
     const localStorageItem = localStorage.getItem(key);
     return localStorageItem ? JSON.parse(localStorageItem) : [];
   }
+
   //取得現在所有的todoItem,再加上去
   function saveTodoItem(date, todoItem) {
     const todoList = getTodoListFromStorage();
     todoList.push(todoItem);
     saveTodoListToStorage(todoList);
   }
+
   //setItem
   function saveTodoListToStorage(todoList) {
     const json = JSON.stringify(todoList);
@@ -117,6 +115,7 @@ addEventListener("DOMContentLoaded", function () {
     // const eventClass = storedEvent ? "event" : "";
     // const eventTitle = storedEvent ? JSON.parse(storedEvent).title : "";
   }
+
   //將data-data的value格式轉為符合modal格式
   function formatDate(date) {
     const [year, month, day] = date.split("-");
@@ -131,8 +130,7 @@ addEventListener("DOMContentLoaded", function () {
 
     const todayCell = document.querySelector(".today");
     if (todayCell) {
-      // element.scrollIntoView() behavior設置smooth可以滑順的回到指定位置!!!
-      //behavior:instant(跳躍式)
+      // element.scrollIntoView()
       todayCell.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   });
@@ -163,6 +161,7 @@ addEventListener("DOMContentLoaded", function () {
       saveTodoListToStorage(todoList);
     }
   });
+  
   //將待辦事項顯示在modal中
   document
     .getElementById("calendar")

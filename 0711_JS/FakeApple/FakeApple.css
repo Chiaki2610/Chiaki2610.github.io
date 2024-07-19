@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+.main-section {
+  margin: 30px auto;
+}
+img {
+  width: 100%;
+  vertical-align: top;
+}
+.sub-title {
+  color: #ccc;
+}
+h2,
+.sub-title {
+  font-size: 15px;
+  font-weight: bold;
+}
+#carousel-sec-wrap {
+  margin-bottom: 10px;
+}
+h3.device-color {
+  font-size: 10px;
+}
+.sizeBtn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+  margin: 5px;
+  padding: 10px;
+  border: 1px #999 solid;
+  border-radius: 10px;
+}
+.sizeBtn:focus {
+  border-color: #55a;
+}
+.sizeBtn > h3 {
+  font-size: 15px;
+  text-align: left;
+}
+.sizeBtn > h3 > span {
+  font-size: 10px;
+}
+.sizeBtn > p {
+  font-size: 10px;
+  align-self: center;
+}
+.container,
+.select-color-group {
+  margin-bottom: 20px;
+}
+.normal-btn,
+.blue-btn,
+.white-btn,
+.black-btn {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  border: transparent;
+  border-radius: 50%;
+  box-shadow: 1px 1px 3px #0005 inset;
+  background-color: #fff;
+}
+.normal-btn:focus,
+.blue-btn:focus,
+.white-btn:focus,
+.black-btn:focus {
+  outline: #33a solid 3px;
+}
+.normal-btn {
+  background-color: #aea68f;
+}
+.blue-btn {
+  background-color: #004;
+}
+.black-btn {
+  background-color: #000000b4;
+}
+.select-storage-device {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.select-storage-device > button {
+  margin: 2px 0;
+}
+.select-storage-device > button > p {
+  margin-top: 10px;
+  font-size: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 1024px) {
+}
+@media screen and (min-width: 1200px) {
+}

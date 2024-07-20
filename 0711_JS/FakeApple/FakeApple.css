@@ -95,11 +95,8 @@ h3.device-color {
   justify-content: space-between;
   width: 100%;
 }
-@media screen and (max-width: 767px) {
-}
 @media screen and (min-width: 768px) {
-}
-@media screen and (min-width: 1024px) {
-}
-@media screen and (min-width: 1200px) {
+  .phone-carousel {
+    display: none;
+  }
 }

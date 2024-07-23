@@ -142,6 +142,7 @@ addEventListener("DOMContentLoaded", function () {
 
   removeBtn.addEventListener("click", function (event) {
     const target = event.target.closest("td");
+
     const li = target.closest("li");
     const todoList = getTodoListFromStorage(key);
     if (target) {
@@ -158,6 +159,7 @@ addEventListener("DOMContentLoaded", function () {
     .addEventListener("click", function (event) {
       //使用Element.closest("el")用來獲取當前距離最近的td tag
       const target = event.target.closest("td");
+      console.log(target);
       const todoList = getTodoListFromStorage(key);
       if (target) {
         targetDate = target.getAttribute("data-date");

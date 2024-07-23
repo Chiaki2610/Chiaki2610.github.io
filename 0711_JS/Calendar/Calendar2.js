@@ -5,7 +5,12 @@ addEventListener("DOMContentLoaded", function () {
   let currentYear = new Date().getFullYear();
   let currentMonth = new Date().getMonth() + 1;
   // 月份由0開始至11代表1至12月，故month+1
-  let key;
+  let key = "todoListArray";
+
+  //將data-date帶入日期判斷為yyyy-MM-dd格式
+  function formatTwoDigits(number) {
+    return number < 10 ? "0" + number : number;
+  }
 
   // 生成日曆table DOM
   function generateCalendar(year, month) {
@@ -37,9 +42,12 @@ addEventListener("DOMContentLoaded", function () {
         today.getMonth() + 1 === month &&
         today.getDate() === day;
 
+      const formattedMonth = formatTwoDigits(month);
+      const formattedDay = formatTwoDigits(day);
+
       calendar += `<td class="${
         isToday ? "today" : ""
-      }" data-date="${year}-${month}-${day}">${day}
+      }" data-date="${year}-${formattedMonth}-${formattedDay}">${formattedDay}
       <ul class="list-group"></ul></td>`;
     }
 
@@ -66,8 +74,8 @@ addEventListener("DOMContentLoaded", function () {
   }
 
   //取得現在所有的todoItem,再加上去
-  function saveTodoItem(date, todoItem) {
-    const todoList = getTodoListFromStorage();
+  function saveTodoItem(key, todoItem) {
+    const todoList = getTodoListFromStorage(key);
     todoList.push(todoItem);
     saveTodoListToStorage(todoList);
   }
@@ -78,49 +86,29 @@ addEventListener("DOMContentLoaded", function () {
     localStorage.setItem(key, json);
   }
 
+  //顯示待辦事項
   function displayTodoListAtOrderDate() {
     const dateCells = document.querySelectorAll("td[data-date]");
-    const selectedDate = document.getElementById("eventDate").value;
+    const todoList = getTodoListFromStorage(key);
     dateCells.forEach(function (cell) {
       const cellDate = cell.getAttribute("data-date");
-      const todoList = getTodoListFromStorage(cellDate);
-      const eventClass = todoList.length ? "event" : "";
-      if (cellDate === selectedDate) {
-        if (eventClass) {
-          cell.classList.add(eventClass);
+      for (let i = 0; i < todoList.length; i++) {
+        if (cellDate === todoList[i].date) {
           const ul = cell.querySelector("ul");
-          ul.innerHTML = "";
-          todoList.forEach(function (todoItem) {
-            const titleLi = document.createElement("li");
-            titleLi.classList.add("event-title");
-            titleLi.textContent = todoItem.title;
-            ul.appendChild(titleLi);
-          });
+          const titleLi = document.createElement("li");
+          titleLi.classList.add("event-title");
+          titleLi.textContent = todoList[i].title;
+          ul.appendChild(titleLi);
         }
       }
     });
-    //   if (cellDate === selectedDate) {
-    //     if (eventClass) {
-    //       cell.classList.add(eventClass);
-    //     }
-    //     if (eventTitle) {
-    //       const titleLi = document.createElement("li");
-    //       titleLi.classList.add("event-title");
-    //       titleLi.textContent = eventTitle;
-    //       cell.appendChild(titleLi);
-    //     }
-    //   }
-    // const selectedDate = document.getElementById("eventDate").value;
-    // const storedEvent = localStorage.getItem(selectedDate);
-    // const eventClass = storedEvent ? "event" : "";
-    // const eventTitle = storedEvent ? JSON.parse(storedEvent).title : "";
   }
 
   //將data-data的value格式轉為符合modal格式
-  function formatDate(date) {
-    const [year, month, day] = date.split("-");
-    return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
-  }
+  // function formatDate(date) {
+  //   const [year, month, day] = date.split("-");
+  //   return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
+  // }
 
   todayBtn.addEventListener("click", function (event) {
     const today = new Date();
@@ -136,27 +124,29 @@ addEventListener("DOMContentLoaded", function () {
   });
 
   saveBtn.addEventListener("click", function (event) {
+    const eventDate = document.querySelector("#eventDate").value;
     const eventTitle = document.querySelector("#eventTitle").value.trim();
     const eventContent = document.querySelector("#eventContent").value.trim();
-    const eventDate = document.querySelector("#eventDate").value;
     if (!eventTitle) return;
     // 儲存待辦事項
     const todoItem = {
       //會以毫秒表示一串數字
       id: new Date().valueOf(),
+      date: eventDate,
       title: eventTitle,
       content: eventContent,
     };
-    saveTodoItem(eventDate, todoItem);
+    saveTodoItem(key, todoItem);
     displayTodoListAtOrderDate();
   });
 
   removeBtn.addEventListener("click", function (event) {
     const target = event.target.closest("td");
+    const li = target.closest("li");
+    const todoList = getTodoListFromStorage(key);
     if (target) {
-      key = target.getAttribute("data-date");
-      const todoList = getTodoListFromStorage(key);
-      const todoItemTarget = todoList.some((item) => item.id === 1721415224871);
+      let targetTitle = li.textContent;
+      const todoItemTarget = todoList.some((x) => x.title === targetTitle);
       todoList.splice(todoItemTarget, 1);
       saveTodoListToStorage(todoList);
     }
@@ -168,20 +158,20 @@ addEventListener("DOMContentLoaded", function () {
     .addEventListener("click", function (event) {
       //使用Element.closest("el")用來獲取當前距離最近的td tag
       const target = event.target.closest("td");
+      const todoList = getTodoListFromStorage(key);
       if (target) {
-        key = target.getAttribute("data-date");
-        if (key) {
-          const event = getTodoListFromStorage(key)[0];
-          const formattedDate = formatDate(key);
-          document.getElementById("eventDate").value = formattedDate;
-          document.getElementById("eventTitle").value = event
-            ? event.title
-            : "";
-          document.getElementById("eventContent").value = event
-            ? event.content
-            : "";
-          $("#staticBackdrop").modal("show");
+        targetDate = target.getAttribute("data-date");
+        document.getElementById("eventDate").value = targetDate;
+        for (let i = 0; i < todoList.length; i++) {
+          if (targetDate === todoList[i].date) {
+            document.getElementById("eventTitle").value = todoList[i].title;
+            document.getElementById("eventContent").value = todoList[i].content;
+          } else {
+            document.getElementById("eventTitle").value = "";
+            document.getElementById("eventContent").value = "";
+          }
         }
+        $("#staticBackdrop").modal("show");
       }
     });
 

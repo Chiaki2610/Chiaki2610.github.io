@@ -1,6 +1,6 @@
 // get data
-const appleData = "/0711_JS/FakeApple/FakeApple.json";
-let data;
+const iPhoneData = "/0711_JS/FakeApple/iPhone15.json";
+let dataiPhone;
 function fetchJSONData(url) {
   return fetch(url)
     .then((res) => res.json())
@@ -15,21 +15,38 @@ document
   .addEventListener("click", async (event) => {
     const target = event.target.closest("button");
     if (target) {
-      data = await fetchJSONData(appleData);
+      dataiPhone = await fetchJSONData(iPhoneData);
       const proBtn = document.querySelector(".proBtn");
       const proMaxBtn = document.querySelector(".proMaxBtn");
       if (target === proBtn) {
         for (let i = 0; i < 12; i++) {
-          resultArr.push(data[i]);
+          resultArr.push(dataiPhone[i]);
         }
       } else if (target === proMaxBtn) {
         for (let i = 12; i < 21; i++) {
-          resultArr.push(data[i]);
+          resultArr.push(dataiPhone[i]);
         }
       }
       console.log(resultArr);
     }
   });
+
+const { createApp } = Vue;
+const app = createApp({
+  // data一定要是一個function
+  data: function () {
+    return {};
+  },
+  methods: {},
+  computed: {
+    displayPrice() {
+      if (document.querySelector(".proMaxBtn").target) {
+        return "NT $44,900 起";
+      }
+      return "NT $36,900 起";
+    },
+  },
+}).mount(".main-section");
 
 document.querySelector(".select-color").addEventListener("click", (event) => {
   const target = event.target.closest("button");

@@ -7,6 +7,12 @@
 .main-section {
   margin: 30px auto;
 }
+.navIcon {
+  width: 10%;
+}
+.navbar {
+  background-color: pink;
+}
 img {
   width: 100%;
   vertical-align: top;

@@ -13,103 +13,110 @@
     <link rel="stylesheet" href="FakeApple.css" />
   </head>
   <body>
-    <!-- <nav class="navbar bg-body-tertiary d-flex justify-content-between">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-            <img src="/0711_JS/FakeApple/applePic/apple.svg" alt="apple icon" />
-          </a>
-        </div>
-        <div class="container">
-          <a class="navbar-brand" href="#">
-            <img
-              src="/0711_JS/FakeApple/applePic/magnifying-glass-solid.svg"
-              alt="search icon"
-            />
-          </a>
-          <a class="navbar-brand" href="#">
-            <img
-              src="/0711_JS/FakeApple/applePic/bag-shopping-solid.svg"
-              alt="shopping icon"
-            />
-          </a>
-          <input type="checkbox" id="hb-box" />
-          <label for="hb-box"></label>
-        </div>
-      </nav> -->
+    <nav class="navbar bg-body-tertiary d-flex justify-content-between">
+      <div class="container navbar">
+        <a class="navbar-brand" href="#">
+          <img
+            class="navIcon"
+            src="/0711_JS/FakeApple/applePic/apple.svg"
+            alt="apple icon"
+          />
+        </a>
+      </div>
+      <div class="container navbar">
+        <a class="navbar-brand" href="#">
+          <img
+            class="navIcon"
+            src="/0711_JS/FakeApple/applePic/magnifying-glass-solid.svg"
+            alt="search icon"
+          />
+        </a>
+        <a class="navbar-brand" href="#">
+          <img
+            class="navIcon"
+            src="/0711_JS/FakeApple/applePic/bag-shopping-solid.svg"
+            alt="shopping icon"
+          />
+        </a>
+        <!-- <input type="checkbox" id="hb-box" />
+        <div for="hb-box"></div> -->
+      </div>
+    </nav>
     <div class="main-section">
-      <!-- <div class="header-page">
-        <h1>購買<br />iPhone 15 Pro</h1>
-        <p>NT $36,900 起</p> -->
-      <!-- <div
-            class="btn-toolbar justify-content-between"
-            role="toolbar"
-            aria-label="Toolbar with button groups"
-          >
-            <div class="btn-group" role="group" aria-label="First group">
-              <button type="button" class="btn btn-outline-secondary d-flex">
-                <span
-                  ><img
-                    src="/0711_JS/FakeApple/applePic/truck-solid.svg"
-                    alt="" /></span
-                >免額外付費的運送服務
-              </button>
-              <button type="button" class="btn btn-outline-secondary d-flex">
-                <span
-                  ><img
-                    src="/0711_JS/FakeApple/applePic/apple.svg"
-                    alt="" /></span
-                >直營店取貨
-              </button>
-            </div>
-          </div> -->
-      <!-- </div> -->
-      <div class="select-section">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-md-9">
-              <div id="carousel-fir-wrap" class="carousel slide">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img
-                      src="applePic/iphone-15-pro-finish-select-202309-6-1inch.webp"
-                      class="d-block"
-                    />
-                  </div>
-                  <!-- <div class="carousel-item">
+      <div class="header-page">
+        <h1>購買iPhone 15 Pro</h1>
+        <p>{{displayPrice}}</p>
+        <div
+          class="btn-toolbar justify-content-between"
+          role="toolbar"
+          aria-label="Toolbar with button groups"
+        >
+          <div class="btn-group" role="group" aria-label="First group">
+            <button type="button" class="btn btn-outline-secondary d-flex">
+              <span
+                ><img
+                  src="/0711_JS/FakeApple/applePic/truck-solid.svg"
+                  alt="" /></span
+              >免額外付費的運送服務
+            </button>
+            <button type="button" class="btn btn-outline-secondary d-flex">
+              <span
+                ><img
+                  src="/0711_JS/FakeApple/applePic/apple.svg"
+                  alt="" /></span
+              >直營店取貨
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="select-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-9">
+            <div id="carousel-fir-wrap" class="carousel slide">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="applePic/iphone-15-pro-finish-select-202309-6-1inch.webp"
+                    class="d-block"
+                  />
+                </div>
+                <!-- <div class="carousel-item">
                     <img
                       src="https://picsum.photos/300/200/?random=11"
                       class="d-block"
                     />
                   </div> -->
-                </div>
-                <button
-                  class="carousel-control-prev"
-                  type="button"
-                  data-bs-target="#carousel-fir-wrap"
-                  data-bs-slide="prev"
-                >
-                  <span
-                    class="carousel-control-prev-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button
-                  class="carousel-control-next"
-                  type="button"
-                  data-bs-target="#carousel-fir-wrap"
-                  data-bs-slide="next"
-                >
-                  <span
-                    class="carousel-control-next-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
               </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carousel-fir-wrap"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carousel-fir-wrap"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
-            <div class="col-12 col-md-3">
-              <div class="col-12 select-size">
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="col-12 select-size">
               <h2>機型。<span class="sub-title">哪一款最適合你？</span></h2>
               <div class="size">
                 <button class="sizeBtn proBtn">
@@ -120,16 +127,16 @@
                   <h3>iPhone 15 Pro Max<br /><span>6.7吋顯示器¹</span></h3>
                   <p>NT $44,900起</p>
                 </button>
-                <!-- <button class="d-flex">
-                    <h3>需要選購機型的協助？<span>+</span></h3>
-                    <p>探索螢幕尺寸與電池續航力的差異性</p>
-                  </button> -->
+                <button class="d-flex">
+                  <h3>需要選購機型的協助？<span>+</span></h3>
+                  <p>探索螢幕尺寸與電池續航力的差異性</p>
+                </button>
               </div>
-              </div>
-              <div class="col-12">
+            </div>
+            <div class="col-12">
               <h2>外觀。<span class="sub-title">挑選你喜愛的外觀。</span></h2>
-              </div>
-              <div class="col-12 phone-carousel">
+            </div>
+            <div class="col-12 phone-carousel">
               <div id="carousel-sec-wrap" class="carousel slide">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -182,8 +189,8 @@
                   <span class="visually-hidden">Next</span>
                 </button>
               </div>
-              </div>
-              <div class="col-12 select-color">
+            </div>
+            <div class="col-12 select-color">
               <h3 class="device-color">顏色</h3>
               <div
                 class="btn-toolbar justify-content-between"
@@ -201,13 +208,13 @@
                   <button type="button" class="black-btn"></button>
                 </div>
               </div>
-              </div>
-              <div class="col-12">
+            </div>
+            <div class="col-12">
               <h2>
                 儲存裝置。<span class="sub-title">你需要多少儲存空間？</span>
               </h2>
-              </div>
-              <div class="col-12 select-capacity">
+            </div>
+            <div class="col-12 select-capacity">
               <div
                 class="btn-toolbar justify-content-between"
                 role="toolbar"
@@ -244,10 +251,10 @@
                   </button>
                 </div>
               </div>
-              </div>
-          </div>
+            </div>
           </div>
         </div>
+      </div>
       <!-- <div class="result-section">
           <div class="container">
             <div class="row">
@@ -282,6 +289,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="FakeApple.js"></script>
   </body>
 </html>

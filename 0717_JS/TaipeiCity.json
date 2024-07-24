@@ -1,0 +1,53 @@
+[
+  {
+    "City": "臺北市",
+    "Districts": [
+      { "District": "中正區", "ZipCode": "100" },
+      { "District": "大同區", "ZipCode": "103" },
+      { "District": "中山區", "ZipCode": "104" },
+      { "District": "松山區", "ZipCode": "105" },
+      { "District": "大安區", "ZipCode": "106" },
+      { "District": "萬華區", "ZipCode": "108" },
+      { "District": "信義區", "ZipCode": "110" },
+      { "District": "士林區", "ZipCode": "111" },
+      { "District": "北投區", "ZipCode": "112" },
+      { "District": "內湖區", "ZipCode": "114" },
+      { "District": "南港區", "ZipCode": "115" },
+      { "District": "文山區", "ZipCode": "116" }
+    ]
+  },
+  {
+    "City": "新北市",
+    "Districts": [
+      { "District": "萬里區", "ZipCode": "207" },
+      { "District": "金山區", "ZipCode": "208" },
+      { "District": "板橋區", "ZipCode": "220" },
+      { "District": "汐止區", "ZipCode": "221" },
+      { "District": "深坑區", "ZipCode": "222" },
+      { "District": "石碇區", "ZipCode": "223" },
+      { "District": "瑞芳區", "ZipCode": "224" },
+      { "District": "平溪區", "ZipCode": "226" },
+      { "District": "雙溪區", "ZipCode": "227" },
+      { "District": "貢寮區", "ZipCode": "228" },
+      { "District": "新店區", "ZipCode": "231" },
+      { "District": "坪林區", "ZipCode": "232" },
+      { "District": "烏來區", "ZipCode": "233" },
+      { "District": "永和區", "ZipCode": "234" },
+      { "District": "中和區", "ZipCode": "235" },
+      { "District": "土城區", "ZipCode": "236" },
+      { "District": "三峽區", "ZipCode": "237" },
+      { "District": "樹林區", "ZipCode": "238" },
+      { "District": "鶯歌區", "ZipCode": "239" },
+      { "District": "三重區", "ZipCode": "241" },
+      { "District": "新莊區", "ZipCode": "242" },
+      { "District": "泰山區", "ZipCode": "243" },
+      { "District": "林口區", "ZipCode": "244" },
+      { "District": "蘆洲區", "ZipCode": "247" },
+      { "District": "五股區", "ZipCode": "248" },
+      { "District": "八里區", "ZipCode": "249" },
+      { "District": "淡水區", "ZipCode": "251" },
+      { "District": "三芝區", "ZipCode": "252" },
+      { "District": "石門區", "ZipCode": "253" }
+    ]
+  }
+]

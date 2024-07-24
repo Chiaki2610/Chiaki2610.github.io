@@ -1,19 +1,43 @@
 const map = L.map("map");
 const markers = L.markerClusterGroup();
+const citySelect = document.querySelector(".tpiSelected");
+const districtSelect = document.querySelector(".districtSelect");
 
 window.onload = function () {
   initMap();
   fetchYouBikeData().then((data) => {
-    console.log(data);
     clearMarkerGroup();
-    data.forEach((station) => {
-      renderingStationInfo(station);
-      addMarkers(station);
-    });
     document.querySelector("#my_table").classList.remove("d-none");
     document.querySelector("#loading_spinner").classList.add("d-none");
   });
+  fetchCityData().then((cityData) => {
+    initDistrictSelect(cityData);
+  });
 };
+
+function initDistrictSelect(cityData) {
+  cityData.forEach((city) => {
+    if (citySelect.value === city.City) {
+      for (let i = 0; i < city.Districts.length; i++) {
+        const option = document.createElement("option");
+        option.value = city.Districts[i].District;
+        option.textContent = city.Districts[i].District;
+        districtSelect.appendChild(option);
+      }
+    }
+  });
+}
+
+districtSelect.addEventListener("change", function () {
+  fetchYouBikeData().then((data) => {
+    data.forEach((station) => {
+      if (districtSelect.value === station.sarea) {
+        renderingStationInfo(station);
+        addMarkers(station);
+      }
+    });
+  });
+});
 
 function clearMarkerGroup() {
   if (markers) {
@@ -86,7 +110,6 @@ function fetchYouBikeData() {
 
 // 全台行政區JSON
 function fetchCityData() {
-  const cityData =
-    "https://raw.githubusercontent.com/Chiaki2610/taiwanArea/main/taiwanArea.json";
+  const cityData = "/0717_JS/TaipeiCity.json";
   return fetch(cityData).then((res) => res.json());
 }

@@ -50,7 +50,9 @@ addEventListener("DOMContentLoaded", function () {
       }" data-date="${year}-${formattedMonth}-${formattedDay}">${formattedDay}
       <ul class="list-group"></ul></td>`;
     }
-
+    {
+      /* <ul class="list-group"></ul> */
+    }
     calendar += "</tr></tbody></table>";
     return calendar;
   }
@@ -104,13 +106,7 @@ addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  //將data-data的value格式轉為符合modal格式
-  // function formatDate(date) {
-  //   const [year, month, day] = date.split("-");
-  //   return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
-  // }
-
-  todayBtn.addEventListener("click", function (event) {
+  todayBtn.addEventListener("click", function () {
     const today = new Date();
     currentYear = today.getFullYear();
     currentMonth = today.getMonth() + 1;
@@ -123,7 +119,7 @@ addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  saveBtn.addEventListener("click", function (event) {
+  saveBtn.addEventListener("click", function () {
     const eventDate = document.querySelector("#eventDate").value;
     const eventTitle = document.querySelector("#eventTitle").value.trim();
     const eventContent = document.querySelector("#eventContent").value.trim();
@@ -140,16 +136,15 @@ addEventListener("DOMContentLoaded", function () {
     displayTodoListAtOrderDate();
   });
 
-  removeBtn.addEventListener("click", function (event) {
-    const target = event.target.closest("td");
-
-    const li = target.closest("li");
+  removeBtn.addEventListener("click", function () {
     const todoList = getTodoListFromStorage(key);
-    if (target) {
-      let targetTitle = li.textContent;
-      const todoItemTarget = todoList.some((x) => x.title === targetTitle);
-      todoList.splice(todoItemTarget, 1);
+    for (let i = 0; i < todoList.length; i++) {
+      if (document.getElementById("eventTitle").value === todoList[i].title) {
+        todoList.splice(i, 1);
+      }
       saveTodoListToStorage(todoList);
+      displayTodoListAtOrderDate();
+      updateCalendar();
     }
   });
 
@@ -159,13 +154,12 @@ addEventListener("DOMContentLoaded", function () {
     .addEventListener("click", function (event) {
       //使用Element.closest("el")用來獲取當前距離最近的td tag
       const target = event.target.closest("td");
-      console.log(target);
       const todoList = getTodoListFromStorage(key);
       if (target) {
-        targetDate = target.getAttribute("data-date");
-        document.getElementById("eventDate").value = targetDate;
+        document.getElementById("eventDate").value =
+          target.getAttribute("data-date");
         for (let i = 0; i < todoList.length; i++) {
-          if (targetDate === todoList[i].date) {
+          if (target.getAttribute("data-date") === todoList[i].date) {
             document.getElementById("eventTitle").value = todoList[i].title;
             document.getElementById("eventContent").value = todoList[i].content;
           } else {

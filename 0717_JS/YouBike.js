@@ -1,35 +1,75 @@
 const map = L.map("map");
 const markers = L.markerClusterGroup();
-const citySelect = document.querySelector(".tpiSelected");
+const citySelect = document.querySelector(".citySelect");
 const districtSelect = document.querySelector(".districtSelect");
+const cityData = "/0717_JS/TaipeiCity.json";
+const taipeiYouBikeData =
+  "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json";
+const newTaipeiYouBikeData = "/0717_JS/NewTaipeiYouBike.json";
 
 window.onload = function () {
   initMap();
-  fetchYouBikeData().then((data) => {
+  fetchData(taipeiYouBikeData).then((data) => {
     clearMarkerGroup();
     document.querySelector("#my_table").classList.remove("d-none");
     document.querySelector("#loading_spinner").classList.add("d-none");
   });
-  fetchCityData().then((cityData) => {
-    initDistrictSelect(cityData);
+  fetchData(newTaipeiYouBikeData).then((data) => {
+    clearMarkerGroup();
+  });
+  fetchData(cityData).then((data) => {
+    initCitySelect(data);
+    initDistrictSelect(data);
   });
 };
 
-function initDistrictSelect(cityData) {
+citySelect.addEventListener("change", function () {
+  fetchData(cityData).then((data) => {
+    initDistrictSelect(data);
+  });
+});
+
+function clearOptions(selectedElement) {
+  while (selectedElement.children.length > 1) {
+    selectedElement.removeChild(selectedElement.lastChild);
+  }
+}
+
+function initCitySelect(cityData) {
+  clearOptions(citySelect);
   cityData.forEach((city) => {
-    if (citySelect.value === city.City) {
-      for (let i = 0; i < city.Districts.length; i++) {
-        const option = document.createElement("option");
-        option.value = city.Districts[i].District;
-        option.textContent = city.Districts[i].District;
-        districtSelect.appendChild(option);
-      }
-    }
+    const option = document.createElement("option");
+    option.value = city.City;
+    option.textContent = city.City;
+    citySelect.appendChild(option);
   });
 }
 
+function initDistrictSelect(cityData) {
+  clearOptions(districtSelect);
+  const selectedCity = cityData.find((city) => city.City === citySelect.value);
+
+  if (selectedCity) {
+    selectedCity.Districts.forEach((district) => {
+      const option = document.createElement("option");
+      option.value = district.District;
+      option.textContent = district.District;
+      districtSelect.appendChild(option);
+    });
+  }
+}
+
 districtSelect.addEventListener("change", function () {
-  fetchYouBikeData().then((data) => {
+  clearTableRows();
+  fetchData(taipeiYouBikeData).then((data) => {
+    data.forEach((station) => {
+      if (districtSelect.value === station.sarea) {
+        renderingStationInfo(station);
+        addMarkers(station);
+      }
+    });
+  });
+  fetchData(newTaipeiYouBikeData).then((data) => {
     data.forEach((station) => {
       if (districtSelect.value === station.sarea) {
         renderingStationInfo(station);
@@ -63,6 +103,13 @@ function addMarkers(station) {
   );
   markers.addLayer(marker);
   map.addLayer(markers);
+}
+
+function clearTableRows() {
+  const tableBody = document.querySelector(".data_rows");
+  while (tableBody.firstChild) {
+    tableBody.removeChild(tableBody.firstChild);
+  }
 }
 
 function renderingStationInfo(station) {
@@ -101,15 +148,6 @@ function renderingStationInfo(station) {
   document.querySelector(".data_rows").append(tr);
 }
 
-// 台北YouBike站點JSON
-function fetchYouBikeData() {
-  const taipeiYouBikeData =
-    "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json";
-  return fetch(taipeiYouBikeData).then((res) => res.json());
-}
-
-// 全台行政區JSON
-function fetchCityData() {
-  const cityData = "/0717_JS/TaipeiCity.json";
-  return fetch(cityData).then((res) => res.json());
+function fetchData(dataSource) {
+  return fetch(dataSource).then((res) => res.json());
 }

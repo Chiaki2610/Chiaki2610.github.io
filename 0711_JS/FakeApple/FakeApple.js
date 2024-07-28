@@ -1,91 +1,113 @@
-// get data
-const iPhoneData = "/0711_JS/FakeApple/iPhone15.json";
-let dataiPhone;
-function fetchJSONData(url) {
-  return fetch(url)
-    .then((res) => res.json())
-    .catch((err) => {
-      console.log(err);
-    });
-}
-
-const resultArr = [];
-document
-  .querySelector(".select-size")
-  .addEventListener("click", async (event) => {
-    const target = event.target.closest("button");
-    if (target) {
-      dataiPhone = await fetchJSONData(iPhoneData);
-      const proBtn = document.querySelector(".proBtn");
-      const proMaxBtn = document.querySelector(".proMaxBtn");
-      if (target === proBtn) {
-        for (let i = 0; i < 12; i++) {
-          resultArr.push(dataiPhone[i]);
-        }
-      } else if (target === proMaxBtn) {
-        for (let i = 12; i < 21; i++) {
-          resultArr.push(dataiPhone[i]);
-        }
-      }
-      console.log(resultArr);
-    }
-  });
-
 const { createApp } = Vue;
 const app = createApp({
-  // data一定要是一個function
-  data: function () {
-    return {};
+  data() {
+    return {
+      price: null,
+      selectedName: "iPhone 15",
+      selectedSize: "6.1吋顯示器",
+      selectedCapacity: "128GB",
+      selectedColor: "原色鈦金屬",
+      products: [],
+      images: [],
+      prices: {
+        "6.1吋顯示器": {
+          "128GB": 36900,
+          "256GB": 40400,
+          "512GB": 47400,
+          "1TB": 54400,
+        },
+        "6.7吋顯示器": {
+          "256GB": 44900,
+          "512GB": 51900,
+          "1TB": 58900,
+        },
+      },
+      resultImages: [
+        {
+          idx: 1,
+          color: "原色鈦金屬",
+          url: "/0711_JS/FakeApple/applePic/原色鈦金屬6-1inch/iphone-15-pro-naturaltitanium-select_AV2.jpg",
+        },
+        {
+          idx: 2,
+          color: "白色鈦金屬",
+          url: "/0711_JS/FakeApple/applePic/白色鈦金屬6-1inch/iphone-15-pro-whitetitanium-select_AV2.jpg",
+        },
+        {
+          idx: 3,
+          color: "藍色鈦金屬",
+          url: "/0711_JS/FakeApple/applePic/藍色鈦金屬6-1inch/iphone-15-pro-bluetitanium-select_AV2.jpg",
+        },
+      ],
+    };
   },
-  methods: {},
-  computed: {
-    displayPrice() {
-      if (document.querySelector(".proMaxBtn").target) {
-        return "NT $44,900 起";
+  methods: {
+    fetchProducts() {
+      fetch("/0711_JS/FakeApple/iPhone15.json")
+        .then((response) => response.json())
+        .then((data) => {
+          this.products = data;
+          this.updateImages();
+        });
+    },
+    updateImages() {
+      const selectedProduct = this.products.find(
+        (product) =>
+          product.size === this.selectedSize &&
+          product.capacity === this.selectedCapacity &&
+          product.color === this.selectedColor
+      );
+      if (selectedProduct) {
+        this.price = selectedProduct.price;
+        this.images = selectedProduct.image;
       }
-      return "NT $36,900 起";
+    },
+    setSize(size) {
+      this.selectedSize = size;
+      if (size === "6.1吋顯示器") {
+        this.selectedCapacity = "128GB";
+      } else if (size === "6.7吋顯示器") {
+        this.selectedCapacity = "256GB";
+      }
+      this.updateImages();
+      this.updatePrice();
+    },
+    changeColor(color) {
+      this.selectedColor = color;
+      this.updateImages();
+    },
+    changeCapacity(capacity) {
+      this.selectedCapacity = capacity;
+      this.updateImages();
+      this.updatePrice();
+    },
+    updatePrice() {
+      if (
+        this.prices[this.selectedSize] &&
+        this.prices[this.selectedSize][this.selectedCapacity]
+      ) {
+        this.price = this.prices[this.selectedSize][this.selectedCapacity];
+      }
+    },
+    initializePrice() {
+      if (
+        this.prices[this.selectedSize] &&
+        this.prices[this.selectedSize][this.selectedCapacity]
+      ) {
+        this.price = this.prices[this.selectedSize][this.selectedCapacity];
+      }
     },
   },
-}).mount(".main-section");
-
-document.querySelector(".select-color").addEventListener("click", (event) => {
-  const target = event.target.closest("button");
-  if (target) {
-    const normalBtn = document.querySelector(".normal-btn");
-    const blueBtn = document.querySelector(".blue-btn");
-    const whiteBtn = document.querySelector(".white-btn");
-    const blackBtn = document.querySelector(".black-btn");
-    if (target === normalBtn) {
-      console.log("normal");
-    } else if (target === blueBtn) {
-      console.log("blue");
-    } else if (target === whiteBtn) {
-      console.log("white");
-    } else if (target === blackBtn) {
-      console.log("black");
-    }
-    console.log(resultArr);
-  }
-});
-
-document
-  .querySelector(".select-capacity")
-  .addEventListener("click", (event) => {
-    const target = event.target.closest("button");
-    if (target) {
-      const s128Btn = document.querySelector(".storageOf128");
-      const s256Btn = document.querySelector(".storageOf256");
-      const s512Btn = document.querySelector(".storageOf512");
-      const s1TBtn = document.querySelector(".storageOf1TB");
-      if (target === s128Btn) {
-        console.log("s128Btn");
-      } else if (target === s256Btn) {
-        console.log("s256Btn");
-      } else if (target === s512Btn) {
-        console.log("s512Btn");
-      } else if (target === s1TBtn) {
-        console.log("s1TBtn");
-      }
-      console.log(resultArr);
-    }
-  });
+  computed: {
+    filteredImage() {
+      return (
+        this.resultImages.find((image) => image.color === this.selectedColor)
+          ?.url || ""
+      );
+    },
+  },
+  mounted() {
+    this.fetchProducts();
+    this.initializePrice();
+  },
+}).mount("#app");

@@ -2,22 +2,24 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  text-decoration: none;
   box-sizing: border-box;
 }
-.main-section {
-  margin: 30px auto;
+#app {
+  margin: auto 50px;
 }
-.navIcon {
-  width: 10%;
+.main-section {
+  margin: 30px;
 }
 .navbar {
-  background-color: pink;
+  margin: auto;
 }
 img {
   width: 100%;
   vertical-align: top;
 }
-.sub-title {
+.sub-title,
+.sp-color {
   color: #ccc;
 }
 h2,
@@ -59,10 +61,14 @@ h3.device-color {
 .select-color-group {
   margin-bottom: 5px;
 }
+.color-title {
+  margin: 20px 0;
+  font-size: 15px;
+  font-weight: bold;
+}
 .normal-btn,
 .blue-btn,
-.white-btn,
-.black-btn {
+.white-btn {
   width: 20px;
   height: 20px;
   margin-right: 5px;
@@ -73,8 +79,7 @@ h3.device-color {
 }
 .normal-btn:focus,
 .blue-btn:focus,
-.white-btn:focus,
-.black-btn:focus {
+.white-btn:focus {
   outline: #33a solid 3px;
 }
 .normal-btn {
@@ -82,9 +87,6 @@ h3.device-color {
 }
 .blue-btn {
   background-color: #004;
-}
-.black-btn {
-  background-color: #000000b4;
 }
 .select-storage-device {
   width: 100%;
@@ -101,6 +103,33 @@ h3.device-color {
   justify-content: space-between;
   width: 100%;
 }
+.result-section {
+  background-color: #f5f5f5;
+  padding: 50px;
+}
+.remark {
+  padding: 20px 0;
+  border-top: #ccc solid 1px;
+  border-bottom: #ccc solid 1px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ccc;
+}
+.remark > h3 {
+  font-size: 12px;
+  font-weight: bold;
+}
+.remark > a {
+  text-decoration: none;
+}
+.area-tip {
+  font-size: 12px;
+}
+.shopping-bag {
+  margin: auto;
+  text-align: center;
+}
+
 @media screen and (min-width: 768px) {
   .phone-carousel {
     display: none;

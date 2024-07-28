@@ -13,157 +13,50 @@
     <link rel="stylesheet" href="FakeApple.css" />
   </head>
   <body>
-    <!-- <nav class="navbar bg-body-tertiary d-flex justify-content-between">
-      <div class="container navbar">
-        <a class="navbar-brand" href="#">
-          <img
-            class="navIcon"
-            src="/0711_JS/FakeApple/applePic/apple.svg"
-            alt="apple icon"
-          />
-        </a>
-      </div>
-      <div class="container navbar">
-        <a class="navbar-brand" href="#">
-          <img
-            class="navIcon"
-            src="/0711_JS/FakeApple/applePic/magnifying-glass-solid.svg"
-            alt="search icon"
-          />
-        </a>
-        <a class="navbar-brand" href="#">
-          <img
-            class="navIcon"
-            src="/0711_JS/FakeApple/applePic/bag-shopping-solid.svg"
-            alt="shopping icon"
-          />
-        </a>
-         <input type="checkbox" id="hb-box" />
-        <div for="hb-box"></div> 
-      </div>
-    </nav> -->
-    <div class="main-section">
-      <div class="header-page">
-        <h1>購買iPhone 15 Pro</h1>
-        <p>{{displayPrice}}</p>
-        <!-- <div
-          class="btn-toolbar justify-content-between"
-          role="toolbar"
-          aria-label="Toolbar with button groups"
+    <div id="app">
+      <nav class="navbar navbar-expand-lg">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-          <div class="btn-group" role="group" aria-label="First group">
-            <button type="button" class="btn btn-outline-secondary d-flex">
-              <span
-                ><img
-                  src="/0711_JS/FakeApple/applePic/truck-solid.svg"
-                  alt="" /></span
-              >免額外付費的運送服務
-            </button>
-            <button type="button" class="btn btn-outline-secondary d-flex">
-              <span
-                ><img
-                  src="/0711_JS/FakeApple/applePic/apple.svg"
-                  alt="" /></span
-              >直營店取貨
-            </button>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="#">iPhone</a>
+            <a class="nav-link" href="#">iPad</a>
           </div>
-        </div> -->
+        </div>
+      </nav>
+      <div class="main-section">
+        <div class="header-page">
+          <h1>購買iPhone 15 Pro</h1>
+          <p>NT ${{price}} 起</p>
+        </div>
       </div>
-    </div>
-    <div class="select-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-9">
-            <div id="carousel-fir-wrap" class="carousel slide">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img
-                    src="applePic/iphone-15-pro-finish-select-202309-6-1inch.webp"
-                    class="d-block"
-                  />
-                </div>
-                <!-- <div class="carousel-item">
-                    <img
-                      src="https://picsum.photos/300/200/?random=11"
-                      class="d-block"
-                    />
-                  </div> -->
-              </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carousel-fir-wrap"
-                data-bs-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carousel-fir-wrap"
-                data-bs-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-          </div>
-          <div class="col-12 col-md-3">
-            <div class="col-12 select-size">
-              <h2>機型。<span class="sub-title">哪一款最適合你？</span></h2>
-              <div class="size">
-                <button class="sizeBtn proBtn">
-                  <h3>iPhone 15 Pro<br /><span>6.1吋顯示器¹</span></h3>
-                  <p>NT $36,900 起</p>
-                </button>
-                <button class="sizeBtn proMaxBtn">
-                  <h3>iPhone 15 Pro Max<br /><span>6.7吋顯示器¹</span></h3>
-                  <p>NT $44,900起</p>
-                </button>
-              </div>
-            </div>
-            <div class="col-12">
-              <h2>外觀。<span class="sub-title">挑選你喜愛的外觀。</span></h2>
-            </div>
-            <div class="col-12 phone-carousel">
-              <div id="carousel-sec-wrap" class="carousel slide">
+      <div class="select-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-9">
+              <div id="carousel-fir-wrap" class="carousel slide">
                 <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img
-                      src="applePic/原色鈦金屬6-1inch/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium.webp"
-                      class="d-block"
-                    />
-                  </div>
-                  <div class="carousel-item">
-                    <img
-                      src="applePic/原色鈦金屬6-1inch/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV1.webp"
-                      class="d-block"
-                    />
-                  </div>
-                  <div class="carousel-item">
-                    <img
-                      src="applePic/原色鈦金屬6-1inch/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV2.webp"
-                      class="d-block"
-                    />
-                  </div>
-                  <div class="carousel-item">
-                    <img
-                      src="applePic/原色鈦金屬6-1inch/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium_AV3_FMT_WHH.webp"
-                      class="d-block"
-                    />
+                  <div
+                    v-for="(image, index) in images"
+                    :class="['carousel-item',{ active: index === 0 }]"
+                  >
+                    <img :src="image" class="d-block" />
                   </div>
                 </div>
                 <button
                   class="carousel-control-prev"
                   type="button"
-                  data-bs-target="#carousel-sec-wrap"
+                  data-bs-target="#carousel-fir-wrap"
                   data-bs-slide="prev"
                 >
                   <span
@@ -175,7 +68,7 @@
                 <button
                   class="carousel-control-next"
                   type="button"
-                  data-bs-target="#carousel-sec-wrap"
+                  data-bs-target="#carousel-fir-wrap"
                   data-bs-slide="next"
                 >
                   <span
@@ -186,100 +79,211 @@
                 </button>
               </div>
             </div>
-            <div class="col-12 select-color">
-              <h3 class="device-color">顏色</h3>
-              <div
-                class="btn-toolbar justify-content-between"
-                role="toolbar"
-                aria-label="Toolbar with button groups"
-              >
-                <div
-                  class="select-color-group"
-                  role="group"
-                  aria-label="First group"
-                >
-                  <button type="button" class="normal-btn"></button>
-                  <button type="button" class="blue-btn"></button>
-                  <button type="button" class="white-btn"></button>
-                  <button type="button" class="black-btn"></button>
+            <div class="col-12 col-md-3">
+              <div class="col-12 select-size">
+                <h2>機型。<span class="sub-title">哪一款最適合你？</span></h2>
+                <div class="size">
+                  <button
+                    class="sizeBtn proBtn"
+                    :class="{ active: selectedSize === '6.1吋顯示器' }"
+                    value="36900"
+                    data-capacity="6.1吋顯示器"
+                    @click="setSize('6.1吋顯示器')"
+                  >
+                    <h3>iPhone 15 Pro<br /><span>6.1吋顯示器¹</span></h3>
+                    <p>NT $36,900 起</p>
+                  </button>
+                  <button
+                    class="sizeBtn proMaxBtn"
+                    :class="{ active: selectedSize === '6.7吋顯示器' }"
+                    value="44900"
+                    data-capacity="6.7吋顯示器"
+                    @click="setSize('6.7吋顯示器')"
+                  >
+                    <h3>iPhone 15 Pro Max<br /><span>6.7吋顯示器¹</span></h3>
+                    <p>NT $44,900起</p>
+                  </button>
                 </div>
               </div>
-            </div>
-            <div class="col-12">
-              <h2>
-                儲存裝置。<span class="sub-title">你需要多少儲存空間？</span>
-              </h2>
-            </div>
-            <div class="col-12 select-capacity">
-              <div
-                class="btn-toolbar justify-content-between"
-                role="toolbar"
-                aria-label="Toolbar with button groups"
-              >
+              <div class="col-12">
+                <h2>外觀。<span class="sub-title">挑選你喜愛的外觀。</span></h2>
+              </div>
+              <div class="col-12 phone-carousel">
+                <div id="carousel-sec-wrap" class="carousel slide">
+                  <div class="carousel-inner">
+                    <div
+                      v-for="(image, index) in images"
+                      :class="['carousel-item', { active: index === 0 }]"
+                    >
+                      <img :src="image" class="d-block" />
+                    </div>
+                  </div>
+
+                  <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carousel-sec-wrap"
+                    data-bs-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carousel-sec-wrap"
+                    data-bs-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+              <div class="col-12 select-color">
+                <h3 class="color-title">顏色 - {{selectedColor}}</h3>
                 <div
-                  class="select-storage-device"
-                  role="group"
-                  aria-label="First group"
+                  class="btn-toolbar justify-content-between"
+                  role="toolbar"
+                  aria-label="Toolbar with button groups"
                 >
-                  <button
-                    type="button"
-                    class="btn col-12 btn-outline-secondary storageOf128"
+                  <div
+                    class="select-color-group"
+                    role="group"
+                    aria-label="First group"
                   >
-                    <p><span>128GB²</span><span>NT $36,900 起</span></p>
-                  </button>
-                  <button
-                    type="button"
-                    class="btn col-12 btn-outline-secondary storageOf256"
+                    <button
+                      type="button"
+                      class="normal-btn"
+                      @click="changeColor('原色鈦金屬')"
+                    ></button>
+                    <button
+                      type="button"
+                      class="blue-btn"
+                      @click="changeColor('藍色鈦金屬')"
+                    ></button>
+                    <button
+                      type="button"
+                      class="white-btn"
+                      @click="changeColor('白色鈦金屬')"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <h2>
+                  儲存裝置。<span class="sub-title">你需要多少儲存空間？</span>
+                </h2>
+              </div>
+              <div class="col-12 select-capacity">
+                <div
+                  class="btn-toolbar justify-content-between"
+                  role="toolbar"
+                  aria-label="Toolbar with button groups"
+                >
+                  <div
+                    class="select-storage-device"
+                    role="group"
+                    aria-label="First group"
                   >
-                    <p><span>256GB²</span><span>NT $40,400 起</span></p>
-                  </button>
-                  <button
-                    type="button"
-                    class="btn col-12 btn-outline-secondary storageOf512"
-                  >
-                    <p><span>512GB²</span><span>NT $47,400 起</span></p>
-                  </button>
-                  <button
-                    type="button"
-                    class="btn col-12 btn-outline-secondary storageOf1TB"
-                  >
-                    <p><span>1TB²</span><span>NT $54,400 起</span></p>
-                  </button>
+                    <button
+                      type="button"
+                      class="btn col-12 btn-outline-secondary storageOf128"
+                      v-model="price"
+                      value="36900"
+                      :class="{ 'd-none': selectedSize === '6.7吋顯示器' }"
+                      @click="changeCapacity('128GB')"
+                    >
+                      <p>
+                        <span>128GB²</span>
+                        <span>NT ${{ prices[selectedSize]['128GB'] }} 起</span>
+                      </p>
+                    </button>
+                    <button
+                      type="button"
+                      class="btn col-12 btn-outline-secondary storageOf256"
+                      v-model="price"
+                      value="40400"
+                      @click="changeCapacity('256GB')"
+                    >
+                      <p>
+                        <span>256GB²</span
+                        ><span>NT ${{ prices[selectedSize]['256GB'] }} 起</span>
+                      </p>
+                    </button>
+                    <button
+                      type="button"
+                      class="btn col-12 btn-outline-secondary storageOf512"
+                      v-model="price"
+                      value="47400"
+                      @click="changeCapacity('512GB')"
+                    >
+                      <p>
+                        <span>512GB²</span
+                        ><span>NT ${{ prices[selectedSize]['512GB'] }} 起</span>
+                      </p>
+                    </button>
+                    <button
+                      type="button"
+                      class="btn col-12 btn-outline-secondary storageOf1TB"
+                      v-model="price"
+                      value="54400"
+                      @click="changeCapacity('1TB')"
+                    >
+                      <p>
+                        <span>1TB²</span
+                        ><span>NT ${{ prices[selectedSize]['1TB'] }} 起</span>
+                      </p>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- <div class="result-section">
+        <div class="result-section">
           <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h3 class="card-title">全新 iPhone 等你探索。立即擁有。</h3>
-                  </div>
-                  <img
-                    src="/0711_JS/FakeApple/applePic/原色鈦金屬6-1inch/iphone-15-pro-max-naturaltitanium-select_AV2.jpg"
-                    class="card-img-top"
-                  />
+            <div class="row result-section-row">
+              <div class="col-12 col-md-4">
+                <div class="col-12">
+                  <h3 class="card-title">
+                    你的全新<br />iPhone 15<br /><span class="sp-color"
+                      >依你的需求量身打造</span
+                    >
+                  </h3>
+                  <img :src="filteredImage" class="card-img-top" />
                 </div>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="card">
-                  <h3>需要一點時間嗎？</h3>
-                  <p>
-                    將這部裝置收藏到「你的收藏」，即可保留你選擇的所有配置，你可以隨時從上次離開處接續進行。
+              <div class="col-12 col-md-4">
+                <div class="col-12">
+                  <p>NT ${{price}} 起</p>
+                  <div class="remark">
+                    <h3>需要一點時間嗎？</h3>
+                    <p>
+                      將這部裝置收藏到「你的收藏」，即可保留你選擇的所有配置，你可以隨時從上次離開處接續進行。
+                    </p>
+                    <a href="#">收藏供日後使用</a>
+                  </div>
+                  <p class="mt-4 area-tip">
+                    你所在地區的運送詳細資訊將在「結帳」顯示
                   </p>
-                  <a href="#">收藏供日後使用</a>
-                  <p>你所在地區的運送詳細資訊將在「結帳」顯示</p>
                 </div>
+              </div>
+              <div class="col-12 col-md-4 shopping-bag">
+                <a href="#">
+                  <button class="btn btn-primary">加入購物袋</button>
+                </a>
               </div>
             </div>
           </div>
-        </div> -->
+        </div>
+      </div>
     </div>
-
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
